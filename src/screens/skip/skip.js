@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     },
     View3: {
         borderWidth: 0.2,
-        borderLeftWidth: 390,
+        width: '100%',
         marginTop: 320,
     },
     Text4: {
