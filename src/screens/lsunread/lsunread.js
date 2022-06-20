@@ -12,54 +12,56 @@ const Lsunread = (props) => {
                     <Text style={styles.Textone}>Search in emails</Text>
                 </TouchableOpacity>
             </View>
-            <ScrollView horizontal={true}>
-                <View style={styles.View}>
-                    <TouchableOpacity>
-                        <View style={styles.View1}>
-                            <Text style={styles.Text1}>Important</Text>
-                            <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/doun.png')} />
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.View2}>
-                            <Text style={styles.Text1}>From</Text>
-                            <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/doun.png')} />
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.View3}>
-                            <Text style={styles.Text1}>To</Text>
-                            <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/doun.png')} />
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.View1}>
-                            <Text style={styles.Text1}>Attachment</Text>
-                            <Image resizeMode={'cover'} style={styles.Image5} source={require('../../assets/images/doun.png')} />
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.View2}>
-                            <Text style={styles.Text1}>Date</Text>
-                            <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/doun.png')} />
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => props.navigation.navigate('lsunread')}>
-                        <View style={styles.View2}>
-                            <Text style={styles.Text1}>Is unread</Text>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.View4}>
-                            <Text style={styles.Text1}>Exclude calendar updates</Text>
-                        </View>
-                    </TouchableOpacity>
+            <ScrollView>
+                <ScrollView horizontal={true}>
+                    <View style={styles.View}>
+                        <TouchableOpacity>
+                            <View style={styles.View1}>
+                                <Text style={styles.Text1}>Important</Text>
+                                <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/doun.png')} />
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <View style={styles.View2}>
+                                <Text style={styles.Text1}>From</Text>
+                                <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/doun.png')} />
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <View style={styles.View3}>
+                                <Text style={styles.Text1}>To</Text>
+                                <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/doun.png')} />
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <View style={styles.View1}>
+                                <Text style={styles.Text1}>Attachment</Text>
+                                <Image resizeMode={'cover'} style={styles.Image5} source={require('../../assets/images/doun.png')} />
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <View style={styles.View2}>
+                                <Text style={styles.Text1}>Date</Text>
+                                <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/doun.png')} />
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => props.navigation.navigate('lsunread')}>
+                            <View style={styles.View2}>
+                                <Text style={styles.Text1}>Is unread</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <View style={styles.View4}>
+                                <Text style={styles.Text1}>Exclude calendar updates</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                </ScrollView>
+                <View style={styles.View6}>
+                    <Image resizeMode={'cover'} style={styles.Imagesearch} source={require('../../assets/images/search2.png')} />
+                    <Text style={styles.Text}>No matches for this seach</Text>
                 </View>
             </ScrollView>
-            <View style={styles.View6}>
-                <Image resizeMode={'cover'} style={styles.Imagesearch} source={require('../../assets/images/search2.png')} />
-                <Text style={styles.Text}>No matches for this seach</Text>
-            </View>
         </View>
     )
 }
@@ -68,14 +70,16 @@ export default Lsunread
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
+        paddingBottom: 20,
+        paddingHorizontal: 16
     },
     Viewone: {
-        width: 350,
+        width: '100%',
         height: 60,
         backgroundColor: '#e6e6e6',
         marginTop: 55,
         borderRadius: 30,
-        marginLeft: 20,
         flexDirection: 'row'
     },
     Imageone: {
@@ -98,8 +102,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'gray',
         marginTop: 15,
-        marginLeft: 15,
         borderRadius: 10,
+        marginLeft: 15,
         flexDirection: 'row'
     },
     Text1: {
@@ -164,7 +168,7 @@ const styles = StyleSheet.create({
     },
     View6: {
         alignItems: 'center',
-        marginTop: 200
+        marginTop: 100
     },
     Text: {
         fontSize: 20

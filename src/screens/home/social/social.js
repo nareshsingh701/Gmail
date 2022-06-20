@@ -1,108 +1,134 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, FlatList, } from 'react-native'
 import React from 'react'
 
 const Social = () => {
-    return (
-        <View style={styles.container}>
-            <View>
-                <Text style={styles.Text1}>social</Text>
-            </View>
-            <TouchableOpacity>
-                <View>
-                    <View style={styles.View1}>
-                        <Image resizeMode={'cover'} style={styles.Image1} source={require('../../../assets/images/youube.png')} />
-                        <View>
-                            <Text style={styles.Text2}>YouTube Advertising</Text>
-                            <View style={styles.View2}>
-                                <View style={styles.View3}>
-                                    <Text style={styles.Text3}>Ad</Text>
-                                </View>
-                                <Text style={styles.Text4}>Share your story. Introduce y...</Text>
-                            </View>
-                        </View>
-                        <View>
-                            <TouchableOpacity>
-                                <Image resizeMode={'cover'} style={styles.Image2} source={require('../../../assets/images/givn.png')} />
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={styles.View4}>
-                        <TouchableOpacity>
+    const data = [
+        {
+            title: "upGead Campus",
+            date: "16 jun",
+            name: "Certification Program - Full S..",
+            storage: "Learn HTML/CSS with experts.Be..",
+            icon: require('../../../assets/images/ccc.png'),
+            Image: require('../../../assets/images/cd.png')
+        },
+    ]
+    const renderListData = (listDataa) => {
+        const { item, index } = listDataa;
+        return (
+            <View style={styles.ViewTwo}>
+                <TouchableOpacity>
+                    <View style={styles.Viewthree}>
+                        <Image resizeMode={'cover'} style={styles.Image2} source={item.icon} />
+                        <View style={styles.Viewfor} >
                             <View style={styles.View5}>
-                                <Text style={styles.Text5}>YouTube Ads-Official Site</Text>
+                                <Text style={styles.Textthree}>{item.title}</Text>
+                                <Text style={styles.Textfor}>{item.date}</Text>
                             </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Image resizeMode={'cover'} style={styles.Image3} source={require('../../../assets/images/cd.png')} />
-                        </TouchableOpacity>
+                            <View style={styles.View4}>
+                                <Text>{item.name}</Text>
+                            </View>
+                            <View style={styles.View6}>
+                                <Text>{item.storage}</Text>
+                                <Image resizeMode={'cover'} style={styles.Image3} source={item.Image} />
+                            </View>
+                        </View>
                     </View>
-                </View>
-            </TouchableOpacity>
-        </View>
-    )
+                </TouchableOpacity>
+            </View>
+        )
+    }
+    return (
+        <SafeAreaView style={styles.container}>
+            <View style={styles.Viewone}>
+                <TouchableOpacity onPress={() => props.navigation.navigate('search')}>
+                    <Text style={styles.Textone}>Search in emails</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image resizeMode={'cover'} style={styles.ImageTow} source={require('../../../assets/images/rama.png')} />
+                </TouchableOpacity>
+            </View>
+            <View style={styles.View7}>
+                <Text>Social</Text>
+            </View>
+            <FlatList
+                data={data}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={renderListData}
+            />
+
+        </SafeAreaView >
+    );
 }
 
 export default Social;
-
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        paddingHorizontal: 16
     },
-    Text1: {
-        marginTop: 20,
-        marginLeft: 20
+    Viewone: {
+        height: 55,
+        width: '100%',
+        backgroundColor: '#e6e6e6',
+        borderRadius: 30,
+        flexDirection: 'row',
+        marginTop: 10
     },
-    View1: {
-        flexDirection: 'row'
-    },
-    Image1: {
-        marginLeft: 15,
-        marginTop: 20
-    },
-    Text2: {
-        marginTop: 20,
-        fontWeight: 'bold',
-        marginLeft: 15,
+    Textone: {
+        marginTop: 15,
+        paddingHorizontal: 16,
         fontSize: 20
     },
+    ViewTwo: {
+        height: 100,
+        width: '100%',
+        borderRadius: 15,
+        marginTop: 20,
+    },
+    Viewthree: {
+        flexDirection: 'row',
+        height: 100,
+        width: 70,
+    },
     Image2: {
-        marginLeft: 30,
-        marginTop: 20
+        height: 70,
+        width: 70,
+        marginTop: 8,
     },
-    View2: {
-        flexDirection: 'row'
+    Textthree: {
+        fontSize: 17,
+        fontWeight: 'bold'
     },
-    View3: {
-        width: 22,
-        height: 20,
-        borderWidth: 1,
-        marginLeft: 15,
+    Viewfor: {
+        height: 100,
+        width: 280,
+        marginLeft: 5
     },
-    Text3: {
-        color: '#196619'
-    },
-    Text4: {
-        marginLeft: 10,
-        fontWeight: '500'
-    },
-    View4: {
-        flexDirection: 'row'
+    Textfor: {
+        marginLeft: 50,
+        fontWeight: 'bold'
     },
     View5: {
-        width: 240,
-        height: 30,
-        borderWidth: 1,
-        marginLeft: 85,
-        borderRadius: 25,
-        borderColor: 'gray',
+        flexDirection: 'row',
+        marginTop: 10,
     },
-    Text5: {
-        fontSize: 16,
-        marginTop: 5,
-        marginLeft: 10,
-        color: '#0000cc'
+    View6: {
+        flexDirection: 'row',
+        marginTop: 8
     },
     Image3: {
-        marginLeft: 20
+        width: 24,
+        height: 24,
+        marginLeft: 7
+    },
+    ImageTow: {
+        marginLeft: 100,
+        marginTop: 3
+    },
+    View4: {
+        marginTop: 5
+    },
+    View7: {
+        marginTop: 20
     }
 })

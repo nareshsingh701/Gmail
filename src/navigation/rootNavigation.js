@@ -26,6 +26,16 @@ import Spam from '../screens/home/spam/spam';
 import Lsunread from '../screens/lsunread/lsunread';
 import SearchTow from '../screens/lsunread/searchTow';
 import MyPager from '../screens/myPager/myPager';
+import Skip from '../screens/skip/skip';
+import Setemail from '../screens/setemail/setemail';
+import Help from '../screens/help/help';
+import Bin from '../screens/home/bin/bin';
+import Calendar from '../screens/home/calendar/calendar';
+import Contacts from '../screens/home/contacts/contacts';
+import Settings from '../screens/home/settings/settings';
+import HelpAndFeedback from '../screens/home/helpAndFeedback/helpAndFeedback'
+
+
 
 
 
@@ -124,6 +134,12 @@ const DrawerRoute = () => {
             <Drawer.Screen name="drafts" component={Drafts} />
             <Drawer.Screen name="allmail" component={Allmail} />
             <Drawer.Screen name="spam" component={Spam} />
+            <Drawer.Screen name="bin" component={Bin} />
+            <Drawer.Screen name="calendar" component={Calendar} />
+            <Drawer.Screen name="contacts" component={Contacts} />
+            <Drawer.Screen name="settings" component={Settings} />
+            <Drawer.Screen name="helpAndFeedback" component={HelpAndFeedback} />
+
 
 
         </Drawer.Navigator>
@@ -144,6 +160,9 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="lsunread" component={Lsunread} />
                 <Stack.Screen options={{ headerShown: false }} name="searchTow" component={SearchTow} />
                 <Stack.Screen name="myPager" component={MyPager} />
+                <Stack.Screen name="skip" component={Skip} />
+                <Stack.Screen name="setemail" component={Setemail} />
+                <Stack.Screen options={{ headerShown: false }} name="help" component={Help} />
             </Stack.Navigator>
         </NavigationContainer>
     );

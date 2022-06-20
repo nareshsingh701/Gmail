@@ -1,15 +1,15 @@
-import React from 'react'
 import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, FlatList, } from 'react-native'
+import React from 'react'
 
-const Promotions = (props) => {
+const Bin = () => {
     const data = [
         {
-            title: "Coding Ninjas India",
+            title: "upGead Campus",
             date: "16 jun",
-            name: "Coures designed exclusively for IT P..",
-            storage: "Min Salary Commitment of 8 LPA..",
-            icon: require('../../../assets/images/kamla.png'),
-            Image: require('../../../assets/images/cd.png')
+            name: "Fff",
+            storage: "https://faq.whatsapp.com/general?lg..",
+            icon: require('../../../assets/images/ccc.png'),
+
         },
     ]
     const renderListData = (listDataa) => {
@@ -48,7 +48,7 @@ const Promotions = (props) => {
                 </TouchableOpacity>
             </View>
             <View style={styles.View7}>
-                <Text>promotions</Text>
+                <Text>Bin</Text>
             </View>
             <FlatList
                 data={data}
@@ -57,15 +57,15 @@ const Promotions = (props) => {
             />
 
         </SafeAreaView >
-    );
+    )
 }
 
+export default Bin
 
-export default Promotions;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 16
+        paddingHorizontal: 20
     },
     Viewone: {
         height: 55,
@@ -133,4 +133,3 @@ const styles = StyleSheet.create({
         marginTop: 20
     }
 })
-
