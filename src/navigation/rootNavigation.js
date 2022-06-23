@@ -34,6 +34,7 @@ import Calendar from '../screens/home/calendar/calendar';
 import Contacts from '../screens/home/contacts/contacts';
 import Settings from '../screens/home/settings/settings';
 import HelpAndFeedback from '../screens/home/helpAndFeedback/helpAndFeedback'
+import Join from '../screens/join/join';
 
 
 
@@ -163,6 +164,7 @@ const NavigationComponent = () => {
                 <Stack.Screen name="skip" component={Skip} />
                 <Stack.Screen name="setemail" component={Setemail} />
                 <Stack.Screen options={{ headerShown: false }} name="help" component={Help} />
+                <Stack.Screen options={{ headerShown: false }} name="join" component={Join} />
             </Stack.Navigator>
         </NavigationContainer>
     );

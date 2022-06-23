@@ -4,20 +4,23 @@ import React from 'react'
 const Signup = (props) => {
     return (
         <View style={styles.container}>
-            <View style={styles.Viewone}>
-            </View>
+
             <View style={styles.View3}>
-                <View style={styles.View4}>
-                    <Text style={styles.Text2}>New meeting</Text>
-                </View>
-                <View style={styles.View5}>
-                    <Text style={styles.Text3}>Join with a code</Text>
-                </View>
+                <TouchableOpacity>
+                    <View style={styles.View4}>
+                        <Text style={styles.Text2}>New meeting</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.navigate('join')}>
+                    <View style={styles.View5}>
+                        <Text style={styles.Text3}>Join with a code</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
             <View>
                 <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/nbvc.png')} />
             </View>
-            <View>
+            <View style={styles.View1}>
                 <Text style={styles.Text4}>Your meeting is safe</Text>
 
             </View>
@@ -34,19 +37,8 @@ export default Signup
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
-    },
-    Viewtow: {
-        height: 90,
-        width: "100%",
-        backgroundColor: '#e6e6e6',
-        marginTop: 200,
-        flexDirection: 'row'
-    },
-    Image4: {
-        height: 35,
-        width: 35,
-        marginLeft: 70,
+        flex: 1,
+        paddingHorizontal: 16
     },
     Text7: {
         marginLeft: 70,
@@ -57,13 +49,14 @@ const styles = StyleSheet.create({
         height: 35,
         width: 35,
     },
-    Text8: {
-        marginLeft: 180,
-        fontSize: 17,
+    View2: {
+        alignSelf: 'center',
+
     },
-    Viewone: {
-        flexDirection: 'row',
+    View1: {
+        alignSelf: 'center'
     },
+
     Imageone: {
         marginTop: 15,
         marginLeft: 20
@@ -82,15 +75,14 @@ const styles = StyleSheet.create({
     },
     View4: {
         height: 50,
-        width: 170,
+        width: 150,
         backgroundColor: 'blue',
         borderRadius: 25,
-        marginLeft: 10,
         marginTop: 25
     },
     View5: {
         height: 50,
-        width: 190,
+        width: 185,
         borderRadius: 25,
         marginLeft: 10,
         marginTop: 25,
@@ -111,20 +103,16 @@ const styles = StyleSheet.create({
     Image3: {
         height: 200,
         width: 200,
-        marginLeft: 85,
+        alignSelf: 'center',
         marginTop: 20
     },
     Text4: {
         fontSize: 30,
-        marginLeft: 45,
     },
     Text6: {
-        marginLeft: 55,
-        marginTop: 20,
         fontSize: 18
     },
     Text7: {
-        marginLeft: 60,
         fontSize: 18
     }
 })

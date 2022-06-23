@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         marginTop: 60
     },
     View: {
-        width: 340,
+        width: '100%',
         borderBottomWidth: 1,
         marginTop: 30,
     },
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         marginTop: 15
     },
     View2: {
-        width: 340,
+        width: '100%',
         borderBottomWidth: 1,
         marginTop: 15,
     },

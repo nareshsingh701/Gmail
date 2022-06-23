@@ -5,7 +5,9 @@ const Settings = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.View1}>
-                <Image resizeMode={'cover'} style={styles.Image} source={require('../../../assets/images/back.png')} />
+                <TouchableOpacity onPress={() => props.navigation.navigate('home')} >
+                    <Image resizeMode={'cover'} style={styles.Image} source={require('../../../assets/images/back.png')} />
+                </TouchableOpacity>
                 <Text style={styles.Text1}>Settings</Text>
                 <Image resizeMode={'cover'} style={styles.Image1} source={require('../../../assets/images/givn.png')} />
             </View>
