@@ -1,9 +1,14 @@
-import { StyleSheet, Text, View, TextInput, Image, ScrollView, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, TextInput, Image, ScrollView, TouchableOpacity, Modal, } from 'react-native'
+import React, { useState } from 'react'
 
 const Search = (props) => {
+    const [modalVisible, setModalVisible] = useState(false);
+    const [modalFrom, setModalFrom] = useState(false);
+    const [modalLabels, setModalLabels] = useState(false);
+    const [modalAttachment, setModalAttachment] = useState(false);
     return (
         <View style={styles.container}>
+
             < View style={styles.Viewone}>
                 <View style={styles.Viewfor}>
                     <TouchableOpacity onPress={() => props.navigation.navigate("home")}>
@@ -19,31 +24,31 @@ const Search = (props) => {
                 </View>
                 <View style={styles.Viewthree}>
                     <TouchableOpacity>
-                        <Image resizeMode={'cover'} style={styles.Imageone} source={require('../../assets/images/recorder.png')} />
+                        <Image resizeMode={'cover'} style={styles.Image} source={require('../../assets/images/recorder.png')} />
                     </TouchableOpacity>
                 </View>
             </View>
             <ScrollView horizontal={true}>
                 <View style={styles.View}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => setModalLabels(true)}>
                         <View style={styles.View2}>
                             <Text style={styles.Text1}>Labels</Text>
                             <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/doun.png')} />
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => setModalFrom(true)}>
                         <View style={styles.View2}>
                             <Text style={styles.Text1}>From</Text>
                             <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/doun.png')} />
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => setModalVisible(true)}>
                         <View style={styles.View3}>
                             <Text style={styles.Text1}>To</Text>
                             <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/doun.png')} />
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => setModalAttachment(true)}>
                         <View style={styles.View1}>
                             <Text style={styles.Text1}>Attachment</Text>
                             <Image resizeMode={'cover'} style={styles.Image5} source={require('../../assets/images/doun.png')} />
@@ -67,6 +72,335 @@ const Search = (props) => {
                     </TouchableOpacity>
                 </View>
             </ScrollView>
+
+
+            <View style={styles.centeredView}>
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisible}
+
+                >
+                    <View style={styles.centeredView}>
+                        <View style={styles.modalView}>
+                            <View style={styles.View5}>
+                                <TouchableOpacity
+                                    style={[styles.croos, styles.buttonClose]}
+                                    onPress={() => setModalVisible(!modalVisible)}
+                                >
+                                    <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/croos.png')} />
+                                </TouchableOpacity>
+                                <Text style={styles.modalText}>To</Text>
+                            </View>
+                            <View style={styles.View6}>
+                                <TextInput
+                                    placeholder='Type a name or email address'
+                                />
+                            </View>
+                            <View style={styles.View7}>
+                            </View>
+
+                            <View style={styles.View8}>
+                                <Text>Suggestions</Text>
+                                <TouchableOpacity onPress={() => alert('About suggested people Google suggests people based on your interactions.')}>
+                                    <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/iii.png')} />
+                                </TouchableOpacity>
+                            </View>
+                            <TouchableOpacity>
+                                <View style={styles.View9}>
+                                    <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/rama.png')} />
+                                    <View style={styles.View10}>
+                                        <Text style={styles.Text3}>Naresh Singh</Text>
+                                        <Text>nareshsingh7011111@gmail.com</Text>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </Modal>
+            </View>
+            <View style={styles.centeredView}>
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalFrom}
+
+                >
+                    <View style={styles.centeredView}>
+                        <View style={styles.modalView}>
+                            <View style={styles.View5}>
+                                <TouchableOpacity
+                                    style={[styles.croos, styles.buttonClose]}
+                                    onPress={() => setModalFrom(!modalFrom)}
+                                >
+                                    <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/croos.png')} />
+                                </TouchableOpacity>
+                                <Text style={styles.modalText}>From</Text>
+                            </View>
+                            <View style={styles.View6}>
+                                <TextInput
+                                    placeholder='Type a name or email address'
+                                />
+                            </View>
+                            <View style={styles.View7}>
+                            </View>
+
+                            <View style={styles.View8}>
+                                <Text>Suggestions</Text>
+                                <TouchableOpacity onPress={() => alert('About suggested people Google suggests people based on your interactions.')}>
+                                    <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/iii.png')} />
+                                </TouchableOpacity>
+                            </View>
+                            <TouchableOpacity>
+                                <View style={styles.View9}>
+                                    <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/rama.png')} />
+                                    <View style={styles.View10}>
+                                        <Text style={styles.Text3}>Naresh Singh</Text>
+                                        <Text>nareshsingh7011111@gmail.com</Text>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </Modal>
+            </View>
+
+
+
+
+
+
+            <View style={styles.centeredView}>
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalLabels}
+                >
+                    <View style={styles.centeredView}>
+                        <View style={styles.modalView}>
+                            <View style={styles.View5}>
+                                <TouchableOpacity
+                                    style={[styles.croos, styles.buttonClose]}
+                                    onPress={() => setModalLabels(!modalLabels)}
+                                >
+                                    <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/croos.png')} />
+                                </TouchableOpacity>
+                                <Text style={styles.modalText}>Labels</Text>
+                            </View>
+                            <View style={styles.View7}>
+                            </View>
+                            <View style={styles.View11}>
+                                <TextInput
+                                    placeholder='Type a name or email address'
+                                />
+                            </View>
+                            <View style={styles.View12}>
+                            </View>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/cd.png')} />
+                                            <Text style={styles.Text4}>Starred</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/ttt.png')} />
+                                            <Text style={styles.Text4}>Snoozrd</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/important.png')} />
+                                            <Text style={styles.Text4}>Important</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/sent.png')} />
+                                            <Text style={styles.Text4}>Sent</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/send.png')} />
+                                            <Text style={styles.Text4}>Scheduled</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/exmee.png')} />
+                                            <Text style={styles.Text4}>Drafts</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/plp.png')} />
+                                            <Text style={styles.Text4}>All mail</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+
+
+                        </View>
+                    </View>
+                </Modal>
+            </View>
+
+
+
+
+
+
+
+            <View style={styles.centeredView}>
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalAttachment}
+                >
+                    <View style={styles.centeredView1}>
+                        <View style={styles.modalView}>
+                            <View style={styles.View5}>
+                                <TouchableOpacity
+                                    style={[styles.croos, styles.buttonClose]}
+                                    onPress={() => setModalAttachment(!modalAttachment)}
+                                >
+                                    <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/croos.png')} />
+                                </TouchableOpacity>
+                                <Text style={styles.modalText}>Labels</Text>
+                            </View>
+                            {/* <View style={styles.View7}>
+                            </View> */}
+                            <View style={styles.View11}>
+                                {/* <TextInput
+                                    placeholder='Type a name or email address'
+                                /> */}
+                            </View>
+                            <View style={styles.View12}>
+                            </View>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/attachment.png')} />
+                                            <Text style={styles.Text4}>Has any attachment</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/document.png')} />
+                                            <Text style={styles.Text4}>Documents</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/slides.png')} />
+                                            <Text style={styles.Text4}>Slides</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/Sheets.png')} />
+                                            <Text style={styles.Text4}>Sheets</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/ImagesName.png')} />
+                                            <Text style={styles.Text4}>Images</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/pdf.png')} />
+                                            <Text style={styles.Text4}>PDFs</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.View13}>
+                                    <View style={styles.View14}>
+                                        <View style={styles.View15}>
+                                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/video.png')} />
+                                            <Text style={styles.Text4}>Videos</Text>
+                                        </View>
+                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+
+
+                        </View>
+                    </View>
+                </Modal>
+            </View>
         </View>
     )
 }
@@ -75,27 +409,34 @@ export default Search;
 
 const styles = StyleSheet.create({
     container: {
+        //flex: 1,
+        paddingBottom: 20,
+
     },
     Viewone: {
         flexDirection: 'row'
     },
     TextInput: {
         fontSize: 20,
-        marginLeft: 20,
         marginTop: 70,
+        marginLeft: 15
+    },
+    Image: {
+        marginTop: 70,
+        marginLeft: 40
     },
     Imageone: {
         marginTop: 70,
-        marginLeft: 10
+        marginLeft: 15
     },
     Viewtow: {
         height: 120,
-        width: 290,
+        width: 250,
         backgroundColor: '#e6e6e6',
     },
     Viewthree: {
         height: 120,
-        width: 50,
+        width: 70,
         backgroundColor: '#e6e6e6',
     },
     Viewfor: {
@@ -158,4 +499,105 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginLeft: 15
     },
+
+
+
+
+
+    centeredView: {
+        flex: 1,
+        marginTop: 50
+    },
+    centeredView1: {
+        flex: 1,
+        marginTop: 200
+    },
+    modalView: {
+        backgroundColor: "white",
+        height: '100%',
+        width: '100%',
+    },
+    Image2: {
+        height: 30,
+        width: 30
+    },
+    Image3: {
+        height: 20,
+        width: 20,
+        marginLeft: 18
+    },
+    View5: {
+        flexDirection: 'row',
+        marginHorizontal: 16,
+        marginTop: 20
+    },
+    modalText: {
+        fontSize: 25,
+        marginLeft: 20
+    },
+    View6: {
+        marginTop: 40,
+        paddingHorizontal: 16
+    },
+    View7: {
+        borderWidth: 0.4,
+        marginTop: 15,
+        borderColor: 'gray'
+    },
+    View8: {
+        marginHorizontal: 16,
+        marginTop: 20,
+        flexDirection: 'row'
+    },
+    View9: {
+        flexDirection: 'row',
+        paddingHorizontal: 10,
+        marginTop: 20
+    },
+    View10: {
+        marginTop: 7,
+        marginLeft: 15
+    },
+    Text3: {
+        fontSize: 17,
+        fontWeight: 'bold'
+
+    },
+
+
+
+
+
+    View11: {
+        marginTop: 15,
+        paddingHorizontal: 16
+    },
+    View12: {
+        borderWidth: 0.5,
+        marginTop: 15,
+        borderColor: 'gray'
+    },
+    View13: {
+        marginTop: 22,
+        paddingHorizontal: 16,
+    },
+    View14: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    View15: {
+        flexDirection: 'row'
+    },
+    Text4: {
+        fontSize: 16,
+        marginLeft: 30
+    },
+    Image6: {
+        width: 20,
+        height: 20
+    },
+    Image7: {
+        width: 25,
+        height: 25
+    }
 })

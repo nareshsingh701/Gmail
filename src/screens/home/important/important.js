@@ -29,7 +29,7 @@ const Important = (props) => {
                     <View style={styles.Viewthree}>
                         <Image resizeMode={'cover'} style={styles.Image2} source={item.icon} />
                         <View style={styles.Viewfor} >
-                            <View style={styles.View5}>
+                            <View style={styles.View7}>
                                 <Text style={styles.Textthree}>{item.title}</Text>
                                 <Text style={styles.Textfor}>{item.date}</Text>
                             </View>
@@ -105,6 +105,7 @@ const Important = (props) => {
                 <Image resizeMode={'cover'} style={styles.Image4} source={require('../../../assets/images/hide.png')} />
                 <Text style={styles.Text2}>Hide filters</Text>
             </View>
+
             <FlatList
                 data={data}
                 keyExtractor={(item, index) => index.toString()}
@@ -117,8 +118,14 @@ export default Important
 
 const styles = StyleSheet.create({
     container: {
+        // flex: 1,
+        paddingHorizontal: 16,
+        paddingBottom: 20,
     },
     View: {
+        flexDirection: 'row'
+    },
+    View7: {
         flexDirection: 'row'
     },
     View1: {
@@ -127,8 +134,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'gray',
         marginTop: 15,
-        marginLeft: 15,
         borderRadius: 10,
+        marginLeft: 15,
         flexDirection: 'row'
     },
     Text1: {
@@ -160,15 +167,10 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         flexDirection: 'row'
     },
-    Image2: {
-        marginLeft: 3,
-        marginTop: 5
-    },
     Image5: {
         marginLeft: 3,
         marginTop: 5
     },
-
     View4: {
         height: 35,
         width: 245,
@@ -183,7 +185,6 @@ const styles = StyleSheet.create({
     },
     Text2: {
         marginTop: 20,
-        marginLeft: 15,
         fontSize: 15
     },
     Image4: {
@@ -194,22 +195,21 @@ const styles = StyleSheet.create({
     },
     ViewTwo: {
         height: 100,
-        width: 370,
+        width: '100%',
         borderRadius: 15,
-        marginLeft: 10,
-        marginTop: 20
+        marginTop: 20,
     },
     Viewthree: {
         flexDirection: 'row'
     },
     Image2: {
-        height: 75,
-        width: 75,
-        marginLeft: 10
+        height: 55,
+        width: 55,
+
     },
     Viewfor: {
         height: 90,
-        width: 280,
+        width: '100%',
     },
     View5: {
         flexDirection: 'row'
@@ -238,9 +238,8 @@ const styles = StyleSheet.create({
     },
     Viewone: {
         height: 55,
-        width: '90%',
+        width: '100%',
         backgroundColor: '#e6e6e6',
-        marginLeft: 19,
         borderRadius: 30,
         flexDirection: 'row',
         marginTop: 5
