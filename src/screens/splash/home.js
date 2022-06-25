@@ -43,6 +43,11 @@ const Home = (props) => {
     )
   }
 
+  const navigateToScreen = () => {
+    setModalVisible(false)
+    props.navigation.navigate('setemail')
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.Viewone}>
@@ -96,22 +101,29 @@ const Home = (props) => {
               </View>
               <View style={styles.View13}>
               </View>
-              <View style={styles.View14}>
-                <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/cloud.png')} />
-                <Text style={styles.Text2}>Storage used: 0% of 15 GB</Text>
-              </View>
+              <TouchableOpacity onPress={() => {
+                setModalVisible(false)
+                props.navigation.navigate('storage')
+              }}>
+                <View style={styles.View14}>
+                  <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/cloud.png')} />
+                  <Text style={styles.Text2}>Storage used: 0% of 15 GB</Text>
+                </View>
+              </TouchableOpacity>
               <View style={styles.View15}>
               </View>
-              <TouchableOpacity onPress={() => props.navigation.navigate('setemail')}>
+              <TouchableOpacity onPress={navigateToScreen}>
                 <View style={styles.View16}>
                   <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/user.png')} />
                   <Text style={styles.Text3}>Add another account</Text>
                 </View>
               </TouchableOpacity>
-              <View style={styles.View17}>
-                <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/settings.png')} />
-                <Text style={styles.Text3}>Manage accounts on this device</Text>
-              </View>
+              <TouchableOpacity>
+                <View style={styles.View17}>
+                  <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/settings.png')} />
+                  <Text style={styles.Text3}>Manage accounts on this device</Text>
+                </View>
+              </TouchableOpacity>
               <View style={styles.View18}>
               </View>
               <View style={styles.View19}>
@@ -133,7 +145,8 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 16
+    paddingHorizontal: 16,
+    paddingBottom: 20
   },
   Viewone: {
     height: 55,
@@ -317,7 +330,8 @@ const styles = StyleSheet.create({
     marginTop: 15
   },
   Text4: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: 18
   }
 
 })

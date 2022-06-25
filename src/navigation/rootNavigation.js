@@ -35,6 +35,7 @@ import Contacts from '../screens/home/contacts/contacts';
 import Settings from '../screens/home/settings/settings';
 import HelpAndFeedback from '../screens/home/helpAndFeedback/helpAndFeedback'
 import Join from '../screens/join/join';
+import Storage from '../screens/storage/storage';
 
 
 
@@ -165,6 +166,7 @@ const NavigationComponent = () => {
                 <Stack.Screen name="setemail" component={Setemail} />
                 <Stack.Screen options={{ headerShown: false }} name="help" component={Help} />
                 <Stack.Screen options={{ headerShown: false }} name="join" component={Join} />
+                <Stack.Screen options={{ headerShown: false }} name="storage" component={Storage} />
             </Stack.Navigator>
         </NavigationContainer>
     );

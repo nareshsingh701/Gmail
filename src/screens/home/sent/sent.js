@@ -96,7 +96,8 @@ const styles = StyleSheet.create({
     container: {
     },
     View: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        paddingHorizontal: 16
     },
     View1: {
         width: 140,
@@ -125,7 +126,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginLeft: 15,
         borderRadius: 10,
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     View3: {
         width: 75,
@@ -170,11 +171,11 @@ const styles = StyleSheet.create({
         marginLeft: 170
     },
     ViewTwo: {
-        height: 100,
-        width: 370,
-        borderRadius: 15,
-        marginLeft: 10,
-        marginTop: 20
+        // height: 100,
+        // width: 370,
+        // borderRadius: 15,
+        marginTop: 20,
+        paddingHorizontal: 16
     },
     Viewthree: {
         flexDirection: 'row'
@@ -182,7 +183,6 @@ const styles = StyleSheet.create({
     Image2: {
         height: 75,
         width: 75,
-        marginLeft: 10
     },
     Viewfor: {
         height: 90,
