@@ -20,9 +20,11 @@ const Storage = (props) => {
                 <View style={styles.View4}>
                     <Text style={styles.Text3}>Your account comes with 15 GB of storage at no charge</Text>
                 </View>
-                <View style={styles.View5}>
-                    <Text style={styles.Text4}>Get storage</Text>
-                </View>
+                <TouchableOpacity onPress={() => props.navigation.navigate('googleOne')}>
+                    <View style={styles.View5}>
+                        <Text style={styles.Text4}>Get storage</Text>
+                    </View>
+                </TouchableOpacity>
                 <View style={styles.View6}>
                 </View>
                 <View style={styles.View7}>
@@ -70,9 +72,11 @@ const Storage = (props) => {
                         <Text style={styles.Text8}>0 KB</Text>
                     </View>
                 </View>
-                <View style={styles.View16}>
-                    <Text style={styles.Text9}>Clean up space</Text>
-                </View>
+                <TouchableOpacity onPress={() => props.navigation.navigate('storageManager')}>
+                    <View style={styles.View16}>
+                        <Text style={styles.Text9}>Clean up space</Text>
+                    </View>
+                </TouchableOpacity>
             </ScrollView>
         </View>
     )

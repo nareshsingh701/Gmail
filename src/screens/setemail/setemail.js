@@ -91,11 +91,12 @@ const styles = StyleSheet.create({
     View2: {
         width: '100%',
         borderBottomWidth: 1,
-        marginTop: 15,
+        marginTop: 14,
     },
     Text2: {
-        fontSize: 22,
-        paddingHorizontal: 20
+        fontSize: 18,
+        paddingHorizontal: 20,
+        marginTop: 5
     }
 
 })

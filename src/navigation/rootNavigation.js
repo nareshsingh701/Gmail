@@ -36,6 +36,8 @@ import Settings from '../screens/home/settings/settings';
 import HelpAndFeedback from '../screens/home/helpAndFeedback/helpAndFeedback'
 import Join from '../screens/join/join';
 import Storage from '../screens/storage/storage';
+import GoogleOne from '../screens/googleOne/googleOne';
+import StorageManager from '../screens/storageManager/storageManager';
 
 
 
@@ -167,6 +169,9 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="help" component={Help} />
                 <Stack.Screen options={{ headerShown: false }} name="join" component={Join} />
                 <Stack.Screen options={{ headerShown: false }} name="storage" component={Storage} />
+                <Stack.Screen options={{ headerShown: false }} name="googleOne" component={GoogleOne} />
+                <Stack.Screen options={{ headerShown: false }} name="storageManager" component={StorageManager} />
+
             </Stack.Navigator>
         </NavigationContainer>
     );
