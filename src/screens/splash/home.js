@@ -118,7 +118,10 @@ const Home = (props) => {
                   <Text style={styles.Text3}>Add another account</Text>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => {
+                setModalVisible(false)
+                props.navigation.navigate('account')
+              }}>
                 <View style={styles.View17}>
                   <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/settings.png')} />
                   <Text style={styles.Text3}>Manage accounts on this device</Text>

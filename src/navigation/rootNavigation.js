@@ -38,6 +38,7 @@ import Join from '../screens/join/join';
 import Storage from '../screens/storage/storage';
 import GoogleOne from '../screens/googleOne/googleOne';
 import StorageManager from '../screens/storageManager/storageManager';
+import Account from '../screens/account/account';
 
 
 
@@ -171,6 +172,8 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="storage" component={Storage} />
                 <Stack.Screen options={{ headerShown: false }} name="googleOne" component={GoogleOne} />
                 <Stack.Screen options={{ headerShown: false }} name="storageManager" component={StorageManager} />
+                <Stack.Screen options={{ headerShown: false }} name="account" component={Account} />
+
 
             </Stack.Navigator>
         </NavigationContainer>

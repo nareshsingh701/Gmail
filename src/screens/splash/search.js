@@ -6,6 +6,7 @@ const Search = (props) => {
     const [modalFrom, setModalFrom] = useState(false);
     const [modalLabels, setModalLabels] = useState(false);
     const [modalAttachment, setModalAttachment] = useState(false);
+    const [modalData, setModalData] = useState(false);
     return (
         <View style={styles.container}>
 
@@ -54,7 +55,7 @@ const Search = (props) => {
                             <Image resizeMode={'cover'} style={styles.Image5} source={require('../../assets/images/doun.png')} />
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => setModalData(true)}>
                         <View style={styles.View2}>
                             <Text style={styles.Text1}>Date</Text>
                             <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/doun.png')} />
@@ -276,8 +277,6 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-
-
                         </View>
                     </View>
                 </Modal>
@@ -306,12 +305,7 @@ const Search = (props) => {
                                 </TouchableOpacity>
                                 <Text style={styles.modalText}>Labels</Text>
                             </View>
-                            {/* <View style={styles.View7}>
-                            </View> */}
                             <View style={styles.View11}>
-                                {/* <TextInput
-                                    placeholder='Type a name or email address'
-                                /> */}
                             </View>
                             <View style={styles.View12}>
                             </View>
@@ -397,6 +391,53 @@ const Search = (props) => {
                             </TouchableOpacity>
 
 
+                        </View>
+                    </View>
+                </Modal>
+            </View>
+            <View style={styles.centeredView}>
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalData}
+
+                >
+                    <View style={styles.centeredView2}>
+                        <View style={styles.modalView}>
+                            <View style={styles.View5}>
+                                <TouchableOpacity
+                                    style={[styles.croos, styles.buttonClose]}
+                                    onPress={() => setModalData(!modalData)}
+                                >
+                                    <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/croos.png')} />
+                                </TouchableOpacity>
+                                <Text style={styles.modalText}>Data</Text>
+                            </View>
+                            <View style={styles.View7}>
+                            </View>
+                            <View style={styles.View16}>
+                                <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/round.png')} />
+                                <Text style={styles.Text5}>Any time</Text>
+                            </View>
+                            <View style={styles.View16}>
+                                <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/round.png')} />
+                                <Text style={styles.Text5}>Older than a week</Text>
+                            </View>
+                            <View style={styles.View16}>
+                                <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/round.png')} />
+                                <Text style={styles.Text5}>Older than a month</Text>
+                            </View>
+                            <View style={styles.View16}>
+                                <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/round.png')} />
+                                <Text style={styles.Text5}>Older than 6 months</Text>
+                            </View>
+                            <View style={styles.View16}>
+                                <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/round.png')} />
+                                <Text style={styles.Text5}>Older than a year</Text>
+                            </View>
+                            <View style={styles.View17}>
+                                <Text style={styles.Text6}>Custom renge</Text>
+                            </View>
                         </View>
                     </View>
                 </Modal>
@@ -508,6 +549,10 @@ const styles = StyleSheet.create({
         flex: 1,
         marginTop: 50
     },
+    centeredView2: {
+        flex: 1,
+        marginTop: 290
+    },
     centeredView1: {
         flex: 1,
         marginTop: 200
@@ -599,5 +644,28 @@ const styles = StyleSheet.create({
     Image7: {
         width: 25,
         height: 25
+    },
+    View16: {
+        paddingHorizontal: 16,
+        flexDirection: 'row',
+        marginTop: 20
+    },
+    Text5: {
+        fontSize: 16,
+        color: '#000',
+        marginLeft: 20,
+        marginTop: 4
+    },
+    Image4: {
+        width: 25,
+        height: 25
+    },
+    View17: {
+        paddingHorizontal: 16,
+        marginTop: 25
+    },
+    Text6: {
+        fontSize: 18,
+        color: 'blue'
     }
 })
