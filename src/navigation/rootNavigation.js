@@ -39,6 +39,9 @@ import Storage from '../screens/storage/storage';
 import GoogleOne from '../screens/googleOne/googleOne';
 import StorageManager from '../screens/storageManager/storageManager';
 import Account from '../screens/account/account';
+import Google from '../screens/google/google';
+import Addanaccount from '../screens/addanaccount/addanaccount';
+import XiaomiCloud from '../screens/xiaomiCloud/xiaomiCloud'
 
 
 
@@ -173,7 +176,9 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="googleOne" component={GoogleOne} />
                 <Stack.Screen options={{ headerShown: false }} name="storageManager" component={StorageManager} />
                 <Stack.Screen options={{ headerShown: false }} name="account" component={Account} />
-
+                <Stack.Screen options={{ headerShown: false }} name="google" component={Google} />
+                <Stack.Screen options={{ headerShown: false }} name="addanaccount" component={Addanaccount} />
+                <Stack.Screen options={{ headerShown: false }} name="xiaomiCloud" component={XiaomiCloud} />
 
             </Stack.Navigator>
         </NavigationContainer>

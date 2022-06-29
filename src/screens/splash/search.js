@@ -416,23 +416,23 @@ const Search = (props) => {
                             <View style={styles.View7}>
                             </View>
                             <View style={styles.View16}>
-                                <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/round.png')} />
+                                <Image resizeMode={'cover'} style={styles.Image10} source={require('../../assets/images/round.png')} />
                                 <Text style={styles.Text5}>Any time</Text>
                             </View>
                             <View style={styles.View16}>
-                                <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/round.png')} />
+                                <Image resizeMode={'cover'} style={styles.Image10} source={require('../../assets/images/round.png')} />
                                 <Text style={styles.Text5}>Older than a week</Text>
                             </View>
                             <View style={styles.View16}>
-                                <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/round.png')} />
+                                <Image resizeMode={'cover'} style={styles.Image10} source={require('../../assets/images/round.png')} />
                                 <Text style={styles.Text5}>Older than a month</Text>
                             </View>
                             <View style={styles.View16}>
-                                <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/round.png')} />
+                                <Image resizeMode={'cover'} style={styles.Image10} source={require('../../assets/images/round.png')} />
                                 <Text style={styles.Text5}>Older than 6 months</Text>
                             </View>
                             <View style={styles.View16}>
-                                <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/round.png')} />
+                                <Image resizeMode={'cover'} style={styles.Image10} source={require('../../assets/images/round.png')} />
                                 <Text style={styles.Text5}>Older than a year</Text>
                             </View>
                             <View style={styles.View17}>
@@ -464,7 +464,7 @@ const styles = StyleSheet.create({
     },
     Image: {
         marginTop: 70,
-        marginLeft: 40
+        marginLeft: 25
     },
     Imageone: {
         marginTop: 70,
@@ -477,12 +477,12 @@ const styles = StyleSheet.create({
     },
     Viewthree: {
         height: 120,
-        width: 70,
+        width: 80,
         backgroundColor: '#e6e6e6',
     },
     Viewfor: {
         height: 120,
-        width: 50,
+        width: 80,
         backgroundColor: '#e6e6e6',
     },
     View: {
@@ -657,8 +657,8 @@ const styles = StyleSheet.create({
         marginTop: 4
     },
     Image4: {
-        width: 25,
-        height: 25
+        width: 50,
+        height: 50
     },
     View17: {
         paddingHorizontal: 16,
@@ -667,5 +667,9 @@ const styles = StyleSheet.create({
     Text6: {
         fontSize: 18,
         color: 'blue'
+    },
+    Image10: {
+        width: 30,
+        height: 30
     }
 })

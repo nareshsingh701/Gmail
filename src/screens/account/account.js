@@ -26,41 +26,49 @@ const Account = (props) => {
                 <View style={styles.View5}>
                     <Text>GOOGLE</Text>
                 </View>
-                <View style={styles.View6}>
-                    <View style={styles.View7}>
-                        <View style={styles.View8}>
-                            <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/good.png')} />
-                            <Text style={styles.Text3}>Google</Text>
-                        </View>
-                        <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/Than.png')} />
+                <TouchableOpacity onPress={() => props.navigation.navigate('google')}>
+                    <View style={styles.View6}>
+                        <View style={styles.View7}>
+                            <View style={styles.View8}>
+                                <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/good.png')} />
+                                <Text style={styles.Text3}>Google</Text>
+                            </View>
+                            <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/Than.png')} />
 
+                        </View>
                     </View>
-                </View>
+                </TouchableOpacity>
                 <View style={styles.View4}>
                 </View>
                 <View style={styles.View5}>
                     <Text>OTHER</Text>
                 </View>
-                <View style={styles.View6}>
-                    <View style={styles.View7}>
-                        <View style={styles.View8}>
-                            <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/plus.png')} />
-                            <Text style={styles.Text3}>Add account</Text>
-                        </View>
-                        <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/Than.png')} />
+                <TouchableOpacity onPress={() => props.navigation.navigate('addanaccount')}>
+                    <View style={styles.View6}>
+                        <View style={styles.View7}>
+                            <View style={styles.View8}>
+                                <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/plus.png')} />
+                                <Text style={styles.Text3}>Add account</Text>
+                            </View>
+                            <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/Than.png')} />
 
+                        </View>
                     </View>
-                </View>
-                <View style={styles.View9}>
-                    <Text style={styles.Text5}>Need other settings?</Text>
-                    <Text style={styles.Text6}>Xiaomi Cloud</Text>
-                </View>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={styles.View9}>
+                        <Text style={styles.Text5}>Need other settings?</Text>
+                        <TouchableOpacity onPress={() => props.navigation.navigate('xiaomiCloud')}>
+                            <Text style={styles.Text6}>Xiaomi Cloud</Text>
+                        </TouchableOpacity>
+                    </View>
+                </TouchableOpacity>
                 <View style={styles.View10}>
                     <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/sync.png')} />
                     <Text style={styles.Text7}>Sync now</Text>
                 </View>
             </ScrollView>
-        </View>
+        </View >
     )
 }
 
@@ -119,10 +127,6 @@ const styles = StyleSheet.create({
     Image3: {
         width: 30,
         height: 30
-    },
-    View7: {
-        flexDirection: 'row',
-        justifyContent: 'space-between'
     },
     View8: {
         flexDirection: 'row',

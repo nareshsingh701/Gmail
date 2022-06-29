@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         paddingBottom: 20
     },
     View1: {
-        marginTop: 40,
+        marginTop: 50,
         paddingHorizontal: 16,
     },
     View2: {
