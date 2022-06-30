@@ -5,7 +5,7 @@ const GeneralSettings = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.View1}>
-                <TouchableOpacity onPress={() => props.navigation.navigate('home')} >
+                <TouchableOpacity onPress={() => props.navigation.navigate('settings')} >
                     <Image resizeMode={'cover'} style={styles.Image} source={require('../../assets/images/back.png')} />
                 </TouchableOpacity>
                 <Text style={styles.Text1}>General settings</Text>

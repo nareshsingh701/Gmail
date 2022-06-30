@@ -43,6 +43,7 @@ import Google from '../screens/google/google';
 import Addanaccount from '../screens/addanaccount/addanaccount';
 import XiaomiCloud from '../screens/xiaomiCloud/xiaomiCloud'
 import GeneralSettings from '../screens/generalSettings/generalSettings';
+import NareshSingh7011111 from '../screens/nareshSingh7011111/nareshSingh7011111';
 
 
 
@@ -180,6 +181,7 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="addanaccount" component={Addanaccount} />
                 <Stack.Screen options={{ headerShown: false }} name="xiaomiCloud" component={XiaomiCloud} />
                 <Stack.Screen options={{ headerShown: false }} name="generalSettings" component={GeneralSettings} />
+                <Stack.Screen options={{ headerShown: false }} name="nareshSingh7011111" component={NareshSingh7011111} />
 
             </Stack.Navigator>
         </NavigationContainer>

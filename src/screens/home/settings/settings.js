@@ -16,7 +16,7 @@ const Settings = (props) => {
                     <Text style={styles.Text2}>General settings</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => props.navigation.navigate('nareshSingh7011111')}>
                 <View style={styles.View2}>
                     <Text style={styles.Text2}>nareshsingh7011111@gmail.com</Text>
                 </View>
