@@ -42,6 +42,7 @@ import Account from '../screens/account/account';
 import Google from '../screens/google/google';
 import Addanaccount from '../screens/addanaccount/addanaccount';
 import XiaomiCloud from '../screens/xiaomiCloud/xiaomiCloud'
+import GeneralSettings from '../screens/generalSettings/generalSettings';
 
 
 
@@ -130,6 +131,7 @@ function TabApp() {
 const DrawerRoute = () => {
     return (
         <Drawer.Navigator>
+
             <Drawer.Screen name="home" component={TabApp} />
             <Drawer.Screen name="promotions" component={Promotions} />
             <Drawer.Screen name="socisl" component={Social} />
@@ -147,8 +149,6 @@ const DrawerRoute = () => {
             <Drawer.Screen name="contacts" component={Contacts} />
             <Drawer.Screen name="settings" component={Settings} />
             <Drawer.Screen name="helpAndFeedback" component={HelpAndFeedback} />
-
-
 
         </Drawer.Navigator>
     );
@@ -179,6 +179,7 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="google" component={Google} />
                 <Stack.Screen options={{ headerShown: false }} name="addanaccount" component={Addanaccount} />
                 <Stack.Screen options={{ headerShown: false }} name="xiaomiCloud" component={XiaomiCloud} />
+                <Stack.Screen options={{ headerShown: false }} name="generalSettings" component={GeneralSettings} />
 
             </Stack.Navigator>
         </NavigationContainer>

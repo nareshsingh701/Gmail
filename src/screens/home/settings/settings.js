@@ -11,7 +11,7 @@ const Settings = (props) => {
                 <Text style={styles.Text1}>Settings</Text>
                 <Image resizeMode={'cover'} style={styles.Image1} source={require('../../../assets/images/givn.png')} />
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => props.navigation.navigate('generalSettings')}>
                 <View style={styles.View2}>
                     <Text style={styles.Text2}>General settings</Text>
                 </View>
