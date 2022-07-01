@@ -44,6 +44,7 @@ import Addanaccount from '../screens/addanaccount/addanaccount';
 import XiaomiCloud from '../screens/xiaomiCloud/xiaomiCloud'
 import GeneralSettings from '../screens/generalSettings/generalSettings';
 import NareshSingh7011111 from '../screens/nareshSingh7011111/nareshSingh7011111';
+import Hometo from '../screens/splash/hometo';
 
 
 
@@ -182,6 +183,7 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="xiaomiCloud" component={XiaomiCloud} />
                 <Stack.Screen options={{ headerShown: false }} name="generalSettings" component={GeneralSettings} />
                 <Stack.Screen options={{ headerShown: false }} name="nareshSingh7011111" component={NareshSingh7011111} />
+                <Stack.Screen options={{ headerShown: false }} name="hometo" component={Hometo} />
 
             </Stack.Navigator>
         </NavigationContainer>

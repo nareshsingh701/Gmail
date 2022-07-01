@@ -20,7 +20,7 @@ const Home = (props) => {
     return (
 
       <View style={styles.ViewTwo}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => props.navigation.navigate('hometo')}>
           <View style={styles.Viewthree}>
             <Image resizeMode={'cover'} style={styles.Image2} source={item.icon} />
             <View style={styles.Viewfor} >

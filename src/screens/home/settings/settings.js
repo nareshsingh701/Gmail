@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     },
     View1: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
         marginTop: 20
     },
     Image: {
@@ -49,7 +50,6 @@ const styles = StyleSheet.create({
     Image1: {
         width: 30,
         height: 30,
-        marginLeft: 190
     },
     Text1: {
         fontSize: 20,
