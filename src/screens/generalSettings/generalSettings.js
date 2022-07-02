@@ -1,7 +1,12 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, Modal } from 'react-native'
+import React, { useState } from 'react'
+import { withSequence } from 'react-native-reanimated';
 
 const GeneralSettings = (props) => {
+    const [modalTheme, setModalTheme] = useState(false);
+    const [modalDefault, setModalDefalt] = useState(false);
+    const [ModalDot, setModalDot] = useState(false);
+
     return (
         <View style={styles.container}>
             <View style={styles.View1}>
@@ -9,10 +14,12 @@ const GeneralSettings = (props) => {
                     <Image resizeMode={'cover'} style={styles.Image} source={require('../../assets/images/back.png')} />
                 </TouchableOpacity>
                 <Text style={styles.Text1}>General settings</Text>
-                <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/givn.png')} />
+                <TouchableOpacity onPress={() => setModalDot(true)}>
+                    <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/givn.png')} />
+                </TouchableOpacity>
             </View>
             <ScrollView>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setModalTheme(true)}>
                     <View style={styles.View2}>
                         <Text style={styles.Text2}>Theme</Text>
                         <Text style={styles.Text3}>System default</Text>
@@ -20,7 +27,7 @@ const GeneralSettings = (props) => {
                 </TouchableOpacity>
                 <View style={styles.View3}>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setModalDefalt(true)}>
                     <View style={styles.View2}>
                         <Text style={styles.Text2}>Default notification action</Text>
                         <Text style={styles.Text3}>Archive</Text>
@@ -28,7 +35,7 @@ const GeneralSettings = (props) => {
                 </TouchableOpacity>
                 <View style={styles.View3}>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.navigate('gmail')}>
                     <View style={styles.View2}>
                         <Text style={styles.Text2}>Manage notification </Text>
                     </View>
@@ -130,6 +137,154 @@ const GeneralSettings = (props) => {
                     </View>
                 </TouchableOpacity>
             </ScrollView>
+
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={modalTheme}
+
+            >
+                <View style={styles.View9}>
+                    <View style={styles.View10}>
+                        <View style={styles.View11}>
+                            <Text style={styles.Text2}>Theme</Text>
+                        </View>
+                        <View style={styles.View12}>
+                            <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/round.png')} />
+                            <Text style={styles.Text6}>Light</Text>
+                        </View>
+                        <View style={styles.View12}>
+                            <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/round.png')} />
+                            <Text style={styles.Text6}>Dark</Text>
+                        </View>
+                        <View style={styles.View12}>
+                            <View style={styles.View13}>
+                                <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/blue.png')} />
+                            </View>
+                            <Text style={styles.Text6}>System default</Text>
+                        </View>
+                        <TouchableOpacity
+                            style={[styles.croos, styles.buttonClose]}
+                            onPress={() => setModalTheme(!modalTheme)}
+                        >
+                            <View style={styles.View14}>
+                                <Text style={styles.Text7}>Cancel</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </Modal>
+
+
+
+
+
+
+
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={modalDefault}
+
+            >
+                <View style={styles.View9}>
+                    <View style={styles.View15}>
+                        <View style={styles.View11}>
+                            <Text style={styles.Text2}>Dafault notification action</Text>
+                        </View>
+                        <View style={styles.View12}>
+                            <View style={styles.View13}>
+                                <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/blue.png')} />
+                            </View>
+                            <Text style={styles.Text6}>Archive</Text>
+                        </View>
+                        <View style={styles.View12}>
+                            <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/round.png')} />
+                            <Text style={styles.Text6}>Delete</Text>
+                        </View>
+                        <TouchableOpacity
+                            style={[styles.croos, styles.buttonClose]}
+                            onPress={() => setModalDefalt(!modalDefault)}
+                        >
+                            <View style={styles.View14}>
+                                <Text style={styles.Text7}>Cancel</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </Modal>
+
+
+
+
+
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={modalDefault}
+
+            >
+                <View style={styles.View9}>
+                    <View style={styles.View15}>
+                        <View style={styles.View11}>
+                            <Text style={styles.Text2}>Dafault notification action</Text>
+                        </View>
+                        <View style={styles.View12}>
+                            <View style={styles.View13}>
+                                <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/blue.png')} />
+                            </View>
+                            <Text style={styles.Text6}>Archive</Text>
+                        </View>
+                        <View style={styles.View12}>
+                            <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/round.png')} />
+                            <Text style={styles.Text6}>Delete</Text>
+                        </View>
+                        <TouchableOpacity
+                            style={[styles.croos, styles.buttonClose]}
+                            onPress={() => setModalDefalt(!modalDefault)}
+                        >
+                            <View style={styles.View14}>
+                                <Text style={styles.Text7}>Cancel</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </Modal>
+
+
+
+
+
+
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={ModalDot}
+
+            >
+                <View style={styles.View17}>
+                    <View style={styles.View16}>
+                        <TouchableOpacity
+                            style={[styles.croos, styles.buttonClose]}
+                            onPress={() => setModalDot(!ModalDot)}
+                        >
+                            <View style={styles.View2}>
+                                <Text style={styles.Text2}>Manage Accounts </Text>
+                            </View>
+                        </TouchableOpacity>
+                        <View style={styles.View2}>
+                            <Text style={styles.Text2}>Clear search history </Text>
+                        </View>
+                        <View style={styles.View2}>
+                            <Text style={styles.Text2}>Clear picture approvals </Text>
+                        </View>
+                        <View style={styles.View2}>
+                            <Text style={styles.Text2}>Help and feedback </Text>
+                        </View>
+                    </View>
+                </View>
+            </Modal>
+
         </View >
     )
 }
@@ -213,5 +368,71 @@ const styles = StyleSheet.create({
     Image4: {
         width: 25,
         height: 25
+    },
+    View9: {
+        flex: 1,
+        paddingHorizontal: 16,
+        justifyContent: 'center'
+    },
+    View10: {
+        width: '100%',
+        height: 230,
+        backgroundColor: '#fff',
+        borderRadius: 10
+    },
+    View15: {
+        width: '100%',
+        height: 185,
+        backgroundColor: '#fff',
+        borderRadius: 10
+    },
+    View11: {
+        paddingHorizontal: 16,
+        marginTop: 17
+    },
+    View12: {
+        paddingHorizontal: 16,
+        marginTop: 18,
+        flexDirection: 'row'
+    },
+    Image8: {
+        width: 28,
+        height: 28
+    },
+    Text6: {
+        fontSize: 20,
+        marginLeft: 20
+    },
+    View13: {
+        height: 24,
+        width: 24,
+        borderWidth: 2.5,
+        borderRadius: 15,
+        borderColor: 'blue',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    Image9: {
+        width: 18,
+        height: 18
+    },
+    Text7: {
+        fontSize: 16,
+        color: 'blue',
+    },
+    View14: {
+        marginTop: 17,
+        alignItems: 'flex-end',
+        paddingHorizontal: 25
+    },
+    View16: {
+        width: 240,
+        height: 200,
+        backgroundColor: '#e6e6e6',
+        marginTop: 30,
+        borderRadius: 5
+    },
+    View17: {
+        alignSelf: 'flex-end'
     }
 })

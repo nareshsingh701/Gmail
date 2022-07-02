@@ -45,6 +45,7 @@ import XiaomiCloud from '../screens/xiaomiCloud/xiaomiCloud'
 import GeneralSettings from '../screens/generalSettings/generalSettings';
 import NareshSingh7011111 from '../screens/nareshSingh7011111/nareshSingh7011111';
 import Hometo from '../screens/splash/hometo';
+import Gmail from '../screens/gmail/gmail';
 
 
 
@@ -184,6 +185,7 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="generalSettings" component={GeneralSettings} />
                 <Stack.Screen options={{ headerShown: false }} name="nareshSingh7011111" component={NareshSingh7011111} />
                 <Stack.Screen options={{ headerShown: false }} name="hometo" component={Hometo} />
+                <Stack.Screen options={{ headerShown: false }} name="gmail" component={Gmail} />
 
             </Stack.Navigator>
         </NavigationContainer>

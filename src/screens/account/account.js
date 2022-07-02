@@ -21,21 +21,18 @@ const Account = (props) => {
                     <Text style={styles.Text2}>Wi-Fi only</Text>
                     <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/toggleon.png')} />
                 </View>
-                <View style={styles.View4}>
-                </View>
+                <View style={styles.View4} />
                 <View style={styles.View5}>
                     <Text>GOOGLE</Text>
                 </View>
-                <TouchableOpacity onPress={() => props.navigation.navigate('google')}>
-                    <View style={styles.View6}>
-                        <View style={styles.View7}>
-                            <View style={styles.View8}>
-                                <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/good.png')} />
-                                <Text style={styles.Text3}>Google</Text>
-                            </View>
-                            <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/Than.png')} />
-
+                <TouchableOpacity style={styles.View6} onPress={() => props.navigation.navigate('google')}>
+                    <View style={styles.View7}>
+                        <View style={styles.View8}>
+                            <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/good.png')} />
+                            <Text style={styles.Text3}>Google</Text>
                         </View>
+                        <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/Than.png')} />
+
                     </View>
                 </TouchableOpacity>
                 <View style={styles.View4}>

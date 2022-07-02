@@ -2,11 +2,13 @@ import { StyleSheet, Text, View, TextInput, Image, ScrollView, TouchableOpacity,
 import React, { useState } from 'react'
 
 const Search = (props) => {
+
     const [modalVisible, setModalVisible] = useState(false);
     const [modalFrom, setModalFrom] = useState(false);
     const [modalLabels, setModalLabels] = useState(false);
     const [modalAttachment, setModalAttachment] = useState(false);
     const [modalData, setModalData] = useState(false);
+
     return (
         <View style={styles.container}>
 
@@ -165,12 +167,6 @@ const Search = (props) => {
                     </View>
                 </Modal>
             </View>
-
-
-
-
-
-
             <View style={styles.centeredView}>
                 <Modal
                     animationType="slide"

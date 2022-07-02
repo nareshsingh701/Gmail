@@ -16,7 +16,7 @@ const Home = (props) => {
     },
   ]
   const renderListData = (listDataa) => {
-    const { item, index } = listDataa;
+    const item = listDataa.item;
     return (
 
       <View style={styles.ViewTwo}>
