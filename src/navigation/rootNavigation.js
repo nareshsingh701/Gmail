@@ -3,7 +3,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import { Image, Text } from 'react-native'
 
 
@@ -47,13 +46,14 @@ import NareshSingh7011111 from '../screens/nareshSingh7011111/nareshSingh7011111
 import Hometo from '../screens/splash/hometo';
 import Gmail from '../screens/gmail/gmail';
 import AddAccount from '../screens/addAccount/addAccount';
+import Checkbox from '../screens/checkbox/checkbox';
 
 
 
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
-const Drawer = createDrawerNavigator()
+const Drawer = createDrawerNavigator();
 
 
 function MeetStackScreen() {
@@ -165,6 +165,7 @@ const NavigationComponent = () => {
         <NavigationContainer>
             <Stack.Navigator initialRouteName='myPager'>
 
+
                 <Stack.Screen options={{ headerShown: false }} name="home" component={DrawerRoute} />
                 <Stack.Screen options={{ headerShown: false }} name="search" component={Search} />
                 <Stack.Screen name="splash" component={Splash} />
@@ -188,6 +189,8 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="hometo" component={Hometo} />
                 <Stack.Screen options={{ headerShown: false }} name="gmail" component={Gmail} />
                 <Stack.Screen options={{ headerShown: false }} name="addAccount" component={AddAccount} />
+                <Stack.Screen options={{ headerShown: false }} name="checkbox" component={Checkbox} />
+
 
             </Stack.Navigator>
         </NavigationContainer>

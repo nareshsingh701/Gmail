@@ -10,7 +10,7 @@ const GoogleOne = (props) => {
                         <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/google_logo.png')} />
                         <Text style={styles.Text1}>One</Text>
                     </View>
-                    <TouchableOpacity onPress={() => props.navigation.navigate("home")}>
+                    <TouchableOpacity onPress={() => props.navigation.navigate("storage")}>
                         <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/croos.png')} />
                     </TouchableOpacity>
                 </View>
