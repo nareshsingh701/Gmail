@@ -449,38 +449,44 @@ const styles = StyleSheet.create({
         //flex: 1,
         paddingBottom: 20,
 
+
     },
     Viewone: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        height: 120,
+        width: '100%',
+        backgroundColor: '#e6e6e6',
+        paddingHorizontal: 16
     },
     TextInput: {
         fontSize: 20,
         marginTop: 70,
-        marginLeft: 15
+        width: 250
     },
     Image: {
         marginTop: 70,
-        marginLeft: 25
+        // marginLeft: 25
     },
     Imageone: {
         marginTop: 70,
         marginLeft: 15
     },
-    Viewtow: {
-        height: 120,
-        width: 250,
-        backgroundColor: '#e6e6e6',
-    },
-    Viewthree: {
-        height: 120,
-        width: 80,
-        backgroundColor: '#e6e6e6',
-    },
-    Viewfor: {
-        height: 120,
-        width: 80,
-        backgroundColor: '#e6e6e6',
-    },
+    // Viewtow: {
+    //     height: 120,
+    //     width: 250,
+    //     backgroundColor: '#e6e6e6',
+    // },
+    // Viewthree: {
+    //     height: 120,
+    //     width: 80,
+    //     backgroundColor: '#e6e6e6',
+    // },
+    // Viewfor: {
+    //     height: 120,
+    //     width: 80,
+    //     backgroundColor: '#e6e6e6',
+    // },
     View: {
         flexDirection: 'row'
     },

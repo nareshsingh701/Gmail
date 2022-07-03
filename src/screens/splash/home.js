@@ -1,9 +1,11 @@
 
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, FlatList, Modal, Linking } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, FlatList, Modal, Linking } from 'react-native';
 
 
-const Home = (props) => {
+const Home = (props,) => {
+
+
   const [modalVisible, setModalVisible] = useState(false);
   const data = [
     {
@@ -157,11 +159,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#e6e6e6',
     borderRadius: 30,
     flexDirection: 'row',
-    marginTop: 10
+    marginTop: 10,
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
   },
   Textone: {
     marginTop: 15,
-    paddingHorizontal: 16,
     fontSize: 20
   },
   ViewTwo: {
@@ -207,7 +210,6 @@ const styles = StyleSheet.create({
     marginLeft: 10
   },
   ImageTow: {
-    marginLeft: 100,
     marginTop: 3
   },
   View4: {

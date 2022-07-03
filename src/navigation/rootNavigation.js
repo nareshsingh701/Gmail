@@ -46,7 +46,7 @@ import GeneralSettings from '../screens/generalSettings/generalSettings';
 import NareshSingh7011111 from '../screens/nareshSingh7011111/nareshSingh7011111';
 import Hometo from '../screens/splash/hometo';
 import Gmail from '../screens/gmail/gmail';
-
+import AddAccount from '../screens/addAccount/addAccount';
 
 
 
@@ -66,7 +66,7 @@ function MeetStackScreen() {
 function MailStackScreen() {
     return (
         <Stack.Navigator>
-            <Stack.Screen options={{ headerShown: false }} name="Home" component={Home} />
+            <Stack.Screen options={{ headerShown: false }} name="home" component={Home} />
         </Stack.Navigator>
     );
 }
@@ -164,10 +164,11 @@ const NavigationComponent = () => {
 
         <NavigationContainer>
             <Stack.Navigator initialRouteName='myPager'>
+
                 <Stack.Screen options={{ headerShown: false }} name="home" component={DrawerRoute} />
                 <Stack.Screen options={{ headerShown: false }} name="search" component={Search} />
                 <Stack.Screen name="splash" component={Splash} />
-                <Stack.Screen name="signup" component={Signup} />
+                <Stack.Screen options={{ headerShown: false }} name="signup" component={Signup} />
                 <Stack.Screen options={{ headerShown: false }} name="lsunread" component={Lsunread} />
                 <Stack.Screen options={{ headerShown: false }} name="searchTow" component={SearchTow} />
                 <Stack.Screen name="myPager" component={MyPager} />
@@ -186,6 +187,7 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="nareshSingh7011111" component={NareshSingh7011111} />
                 <Stack.Screen options={{ headerShown: false }} name="hometo" component={Hometo} />
                 <Stack.Screen options={{ headerShown: false }} name="gmail" component={Gmail} />
+                <Stack.Screen options={{ headerShown: false }} name="addAccount" component={AddAccount} />
 
             </Stack.Navigator>
         </NavigationContainer>

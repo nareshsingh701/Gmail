@@ -62,13 +62,14 @@ const styles = StyleSheet.create({
         marginTop: 30,
     },
     Imagetow: {
-        width: 35,
+        width: 30,
         height: 30
     },
     Text3: {
-        fontSize: 25,
+        fontSize: 20,
         marginLeft: 30,
-        color: 'blue'
+        color: 'blue',
+        marginTop: 5
     },
     View3: {
         borderWidth: 0.2,

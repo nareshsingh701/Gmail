@@ -59,7 +59,7 @@ const HelpAndFeedback = (props) => {
             </View>
             <View style={styles.View8}>
                 <Image resizeMode={'cover'} style={styles.Image3} source={require('../../../assets/images/nimuda.png')} />
-                <Text style={styles.Text6}>Send feedback</Text>
+                <Text style={styles.Text6}>Send feedbac</Text>
             </View>
             <View style={styles.View9}>
             </View>

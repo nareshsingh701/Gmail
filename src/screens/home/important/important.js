@@ -206,7 +206,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     View7: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        // justifyContent: 'space-between'
     },
     View1: {
         width: 140,
@@ -285,6 +286,7 @@ const styles = StyleSheet.create({
     Image2: {
         height: 55,
         width: 55,
+        marginTop: 10
 
     },
     Viewfor: {
@@ -300,7 +302,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     Textfor: {
-        marginLeft: 150,
+        marginLeft: 165,
         marginTop: 15,
         fontWeight: 'bold'
     },
@@ -308,12 +310,15 @@ const styles = StyleSheet.create({
         marginTop: 6,
     },
     View6: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+
     },
     Text6: {
         marginTop: 8
     },
     Image3: {
+        width: 25,
+        height: 25,
         marginLeft: 8
     },
     Viewone: {
