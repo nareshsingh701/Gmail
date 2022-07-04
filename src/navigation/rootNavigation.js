@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import { Image, Text } from 'react-native'
 
 
@@ -168,13 +169,13 @@ const NavigationComponent = () => {
 
                 <Stack.Screen options={{ headerShown: false }} name="home" component={DrawerRoute} />
                 <Stack.Screen options={{ headerShown: false }} name="search" component={Search} />
-                <Stack.Screen name="splash" component={Splash} />
+                <Stack.Screen options={{ headerShown: false }} name="splash" component={Splash} />
                 <Stack.Screen options={{ headerShown: false }} name="signup" component={Signup} />
                 <Stack.Screen options={{ headerShown: false }} name="lsunread" component={Lsunread} />
                 <Stack.Screen options={{ headerShown: false }} name="searchTow" component={SearchTow} />
-                <Stack.Screen name="myPager" component={MyPager} />
-                <Stack.Screen name="skip" component={Skip} />
-                <Stack.Screen name="setemail" component={Setemail} />
+                <Stack.Screen options={{ headerShown: false }} name="myPager" component={MyPager} />
+                <Stack.Screen options={{ headerShown: false }} name="skip" component={Skip} />
+                <Stack.Screen options={{ headerShown: false }} name="setemail" component={Setemail} />
                 <Stack.Screen options={{ headerShown: false }} name="help" component={Help} />
                 <Stack.Screen options={{ headerShown: false }} name="join" component={Join} />
                 <Stack.Screen options={{ headerShown: false }} name="storage" component={Storage} />

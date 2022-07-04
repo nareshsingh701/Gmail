@@ -36,7 +36,7 @@ export default Skip
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // alignItems: "center",,
+        marginTop: 90,
         paddingBottom: 20
     },
     Imageone: {

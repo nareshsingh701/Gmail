@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     View: {
         width: '100%',
         borderBottomWidth: 1,
-        marginTop: 130,
+        marginTop: 200,
     },
     Text5: {
         fontSize: 25,
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     },
     View3: {
         width: '100%',
-        marginTop: 150,
+        marginTop: 250,
         borderBottomWidth: 1
 
     },
