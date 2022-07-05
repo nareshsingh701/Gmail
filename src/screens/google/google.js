@@ -1,7 +1,14 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native'
-import React from 'react'
+import CheckBox from '@react-native-community/checkbox';
+import React, { useState } from 'react'
 
 const Google = (props) => {
+
+    const [toggleCheckBox, setToggleCheckBox] = useState(false)
+    const [toggleCheck, setToggleCheck] = useState(false)
+    const [toggleCheckname, setToggleCheckname] = useState(false)
+    const [togglename, setTogglename] = useState(false)
+
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => props.navigation.navigate('account')}>
@@ -25,7 +32,16 @@ const Google = (props) => {
                 <View style={styles.View6}>
                     <View style={styles.View5}>
                         <Text style={styles.Text4}>Calender</Text>
-                        <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/ok.png')} />
+                        <CheckBox
+                            disabled={false}
+                            value={toggleCheckBox}
+                            boxType={'circle'}
+                            onCheckColor={'#fff'}
+                            onFillColor={'blue'}
+                            lineWidth={3}
+                            tintColor={'#000'}
+                            onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                        />
                     </View>
                     <View>
                         <Text style={styles.Text3} >Last synced 29 June 2022, 8:23 am</Text>
@@ -34,7 +50,16 @@ const Google = (props) => {
                 <View style={styles.View6}>
                     <View style={styles.View5}>
                         <Text style={styles.Text4}>Contacts</Text>
-                        <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/ok.png')} />
+                        <CheckBox
+                            disabled={false}
+                            value={toggleCheck}
+                            boxType={'circle'}
+                            onCheckColor={'#fff'}
+                            onFillColor={'blue'}
+                            lineWidth={3}
+                            tintColor={'#000'}
+                            onValueChange={(newValue) => setToggleCheck(newValue)}
+                        />
                     </View>
                     <View>
                         <Text style={styles.Text3} >Last synced 28 June 2022, 4:16 pm</Text>
@@ -43,7 +68,16 @@ const Google = (props) => {
                 <View style={styles.View6}>
                     <View style={styles.View5}>
                         <Text style={styles.Text4}>Drive</Text>
-                        <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/ok.png')} />
+                        <CheckBox
+                            disabled={false}
+                            value={togglename}
+                            boxType={'circle'}
+                            onCheckColor={'#fff'}
+                            onFillColor={'blue'}
+                            lineWidth={3}
+                            tintColor={'#000'}
+                            onValueChange={(newValue) => setTogglename(newValue)}
+                        />
                     </View>
                     <View>
                         <Text style={styles.Text3} >Last synced 24 June 2022, 5:34 am</Text>
@@ -52,7 +86,16 @@ const Google = (props) => {
                 <View style={styles.View6}>
                     <View style={styles.View5}>
                         <Text style={styles.Text4}>Gmail</Text>
-                        <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/ok.png')} />
+                        <CheckBox
+                            disabled={false}
+                            value={toggleCheckname}
+                            boxType={'circle'}
+                            onCheckColor={'#fff'}
+                            onFillColor={'blue'}
+                            lineWidth={3}
+                            tintColor={'#000'}
+                            onValueChange={(newValue) => setToggleCheckname(newValue)}
+                        />
                     </View>
                     <View>
                         <Text style={styles.Text3} >Last synced 28 June 2022, 4:18 pm</Text>
@@ -110,7 +153,8 @@ const styles = StyleSheet.create({
     },
     View5: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        marginRight: 10
     },
     Text4: {
         fontSize: 20,

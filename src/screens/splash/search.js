@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, TextInput, Image, ScrollView, TouchableOpacity, Modal, } from 'react-native'
+import CheckBox from '@react-native-community/checkbox';
 import React, { useState } from 'react'
 
 const Search = (props) => {
@@ -9,6 +10,13 @@ const Search = (props) => {
     const [modalAttachment, setModalAttachment] = useState(false);
     const [modalData, setModalData] = useState(false);
 
+    const [toggleCheckBox, setToggleCheckBox] = useState(false)
+    const [toggleCheck, setToggleCheck] = useState(false)
+    const [toggleCheckname, setToggleCheckname] = useState(false)
+    const [togglename, setTogglename] = useState(false)
+    const [togglebox, setTogglebox] = useState(false)
+    const [toggleDrafts, setToggleDrafts] = useState(false)
+    const [toggleAll, setToggleAll] = useState(false)
     return (
         <View style={styles.container}>
 
@@ -193,15 +201,23 @@ const Search = (props) => {
                             </View>
                             <View style={styles.View12}>
                             </View>
-                            <TouchableOpacity>
+                            <TouchableOpacity >
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/cd.png')} />
                                             <Text style={styles.Text4}>Starred</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
-
+                                        <CheckBox
+                                            disabled={false}
+                                            value={toggleCheckBox}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -212,8 +228,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/ttt.png')} />
                                             <Text style={styles.Text4}>Snoozrd</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
-
+                                        <CheckBox
+                                            disabled={false}
+                                            value={toggleCheck}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setToggleCheck(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -224,8 +248,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/important.png')} />
                                             <Text style={styles.Text4}>Important</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
-
+                                        <CheckBox
+                                            disabled={false}
+                                            value={toggleCheckname}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setToggleCheckname(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -236,7 +268,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/sent.png')} />
                                             <Text style={styles.Text4}>Sent</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                        <CheckBox
+                                            disabled={false}
+                                            value={togglename}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setTogglename(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -247,7 +288,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/send.png')} />
                                             <Text style={styles.Text4}>Scheduled</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                        <CheckBox
+                                            disabled={false}
+                                            value={togglebox}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setTogglebox(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -258,7 +308,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/exmee.png')} />
                                             <Text style={styles.Text4}>Drafts</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                        <CheckBox
+                                            disabled={false}
+                                            value={toggleDrafts}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setToggleDrafts(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -269,7 +328,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/plp.png')} />
                                             <Text style={styles.Text4}>All mail</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                        <CheckBox
+                                            disabled={false}
+                                            value={toggleAll}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setToggleAll(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -312,8 +380,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/attachment.png')} />
                                             <Text style={styles.Text4}>Has any attachment</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
-
+                                        <CheckBox
+                                            disabled={false}
+                                            value={toggleCheckBox}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -324,8 +400,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/document.png')} />
                                             <Text style={styles.Text4}>Documents</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
-
+                                        <CheckBox
+                                            disabled={false}
+                                            value={toggleCheck}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setToggleCheck(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -336,8 +420,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/slides.png')} />
                                             <Text style={styles.Text4}>Slides</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
-
+                                        <CheckBox
+                                            disabled={false}
+                                            value={toggleCheckname}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setToggleCheckname(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -348,7 +440,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/Sheets.png')} />
                                             <Text style={styles.Text4}>Sheets</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                        <CheckBox
+                                            disabled={false}
+                                            value={togglename}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setTogglename(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -359,7 +460,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/ImagesName.png')} />
                                             <Text style={styles.Text4}>Images</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                        <CheckBox
+                                            disabled={false}
+                                            value={togglebox}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setTogglebox(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -370,7 +480,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/pdf.png')} />
                                             <Text style={styles.Text4}>PDFs</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                        <CheckBox
+                                            disabled={false}
+                                            value={toggleDrafts}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setToggleDrafts(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -381,7 +500,16 @@ const Search = (props) => {
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/video.png')} />
                                             <Text style={styles.Text4}>Videos</Text>
                                         </View>
-                                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/checkbox.png')} />
+                                        <CheckBox
+                                            disabled={false}
+                                            value={toggleAll}
+                                            boxType={'square'}
+                                            onCheckColor={'#fff'}
+                                            onFillColor={'blue'}
+                                            lineWidth={3}
+                                            tintColor={'#000'}
+                                            onValueChange={(newValue) => setToggleAll(newValue)}
+                                        />
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -446,7 +574,6 @@ export default Search;
 
 const styles = StyleSheet.create({
     container: {
-        //flex: 1,
         paddingBottom: 20,
 
 

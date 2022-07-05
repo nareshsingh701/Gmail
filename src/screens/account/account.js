@@ -1,7 +1,13 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, Switch, Modal } from 'react-native'
+import React, { useState, } from 'react'
 
 const Account = (props) => {
+    const [checked, setchecked] = useState(false);
+    const [checke, setchecke] = useState(false);
+
+    const [modalVisible, setModalVisible] = useState(false);
+
+
     return (
         <View style={styles.container}>
             <View style={styles.View1}>
@@ -13,14 +19,22 @@ const Account = (props) => {
                 <View style={styles.View2}>
                     <Text style={styles.Text1}>Accounts & sync</Text>
                 </View>
-                <View style={styles.View3}>
-                    <Text style={styles.Text2}>Auto-sync data</Text>
-                    <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/toggleon.png')} />
-                </View>
-                <View style={styles.View3}>
-                    <Text style={styles.Text2}>Wi-Fi only</Text>
-                    <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/toggleon.png')} />
-                </View>
+                <TouchableOpacity style={styles.View3} onPress={() => setModalVisible(true)}>
+                    <Text onPress={() => setchecked(!checked)} style={styles.Text2} >Auto-sync data</Text>
+                    <Switch
+                        value={checked}
+                        onValueChange={() => setchecked(!checked)}
+                        trackColor={{ false: '#767577', true: '#0000ff', }}
+                    />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.View3}>
+                    <Text onPress={() => setchecke(!checke)} style={styles.Text2}>Wi-Fi only</Text>
+                    <Switch
+                        value={checke}
+                        onValueChange={() => setchecke(!checke)}
+                        trackColor={{ false: '#767577', true: '#0000ff', }}
+                    />
+                </TouchableOpacity>
                 <View style={styles.View4} />
                 <View style={styles.View5}>
                     <Text>GOOGLE</Text>
@@ -65,6 +79,49 @@ const Account = (props) => {
                     <Text style={styles.Text7}>Sync now</Text>
                 </View>
             </ScrollView>
+
+
+
+
+
+
+
+
+            <Modal
+                animationType="slaid"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => setModalVisible(!modalVisible)}
+            >
+                <View style={styles.View11}>
+                    <View style={{ alignItems: 'center', marginTop: 30 }}>
+                        <Text style={styles.View12}>Turn auto-data off?</Text>
+                    </View>
+                    <View style={styles.View13}>
+                        <Text style={{ fontSize: 16 }}>This will conserve data and battery usage, but you`ll needto sync each account manually to collect recent information and you won`t receive nootifications when updates occur.</Text>
+                    </View>
+                    <View style={{ paddingHorizontal: 20, flexDirection: 'row', marginTop: 35, justifyContent: 'space-between' }}>
+                        <View style={styles.View14}>
+                            <Text style={{ fontSize: 16, fontWeight: 'bold', color: "gray" }}>Cancel</Text>
+                        </View>
+                        <TouchableOpacity
+                            style={[styles.buttonClose]}
+                            onPress={() => setModalVisible(!modalVisible)}
+                        >
+                            <View style={styles.View15}>
+                                <Text style={{ fontSize: 16, color: "#fff", fontWeight: 'bold' }}>OK</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </Modal >
+
+
+
+
+
+
+
         </View >
     )
 }
@@ -100,6 +157,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         marginTop: 10
     },
+
     Image2: {
         width: 45,
         height: 45
@@ -168,6 +226,45 @@ const styles = StyleSheet.create({
     Text7: {
         fontSize: 13,
         marginTop: 4
+    },
+
+
+
+
+    View11: {
+        width: '100%',
+        height: 350,
+        backgroundColor: '#fff',
+        marginTop: 350,
+        borderRadius: 30
+    },
+    Image5: {
+        width: 30,
+        height: 30
+    },
+    View12: {
+        fontWeight: '600',
+        fontSize: 20
+    },
+    View13: {
+        paddingHorizontal: 40,
+        marginTop: 20
+    },
+    View14: {
+        width: 160,
+        height: 50,
+        borderRadius: 30,
+        backgroundColor: '#e6e6e6',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    View15: {
+        width: 160,
+        height: 50,
+        borderRadius: 30,
+        backgroundColor: '#0000ff',
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 
 })

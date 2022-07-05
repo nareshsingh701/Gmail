@@ -47,7 +47,7 @@ const Home = (props,) => {
 
   const navigateToScreen = () => {
     setModalVisible(false)
-    props.navigation.navigate('setemail')
+    props.navigation.navigate('anotherAccount')
   }
 
   return (

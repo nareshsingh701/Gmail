@@ -1,7 +1,12 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, Switch } from 'react-native'
+import React, { useState } from 'react'
 
 const XiaomiCloud = (props) => {
+    const [checked, setchecked] = useState(false);
+    const [checkeds, setcheckeds] = useState(false);
+    const [naresh, setnaresh] = useState(false);
+    const [phrases, setphrases] = useState(false);
+    const [name, setname] = useState(false);
     return (
         <View style={styles.container}>
             <View style={styles.View1}>
@@ -158,59 +163,107 @@ const XiaomiCloud = (props) => {
                         </View>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setchecked(!checked)}>
                     <View style={styles.View16}>
                         <View style={styles.View17}>
                             <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/note.png')} />
                             <View>
                                 <Text style={styles.Text7}>Notes</Text>
-                                <Text style={styles.Text8}>Last synced: 15 hrs ago</Text>
+                                {checked == false ?
+                                    <View>
+                                        <Text style={styles.Text8}>Notes</Text>
+                                    </View>
+                                    :
+                                    <View>
+                                        <Text style={styles.Text8}>Last synced: 49 mins ago</Text>
+                                    </View>
+                                }
                             </View>
                         </View>
                         <View style={styles.View18}>
-                            <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/toggleon.png')} />
+                            <Switch
+                                value={checked}
+                                onValueChange={() => setchecked(!checked)}
+                                trackColor={{ false: '#767577', true: '#0000ff' }}
+                            />
                         </View>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setcheckeds(!checkeds)}>
                     <View style={styles.View16}>
                         <View style={styles.View17}>
                             <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/calendar.png')} />
                             <View>
                                 <Text style={styles.Text7}>Calendar</Text>
-                                <Text style={styles.Text8}>Last synced: 3 hrs ago</Text>
+                                {checkeds == false ?
+                                    <View>
+                                        <Text style={styles.Text8}>Events</Text>
+                                    </View>
+                                    :
+                                    <View>
+                                        <Text style={styles.Text8}>Last synced: just now</Text>
+                                    </View>
+                                }
                             </View>
                         </View>
                         <View style={styles.View18}>
-                            <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/toggleon.png')} />
+                            <Switch
+                                value={checkeds}
+                                onValueChange={() => setcheckeds(!checkeds)}
+                                trackColor={{ false: '#767577', true: '#0000ff' }}
+                            />
                         </View>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setnaresh(!naresh)}>
                     <View style={styles.View16}>
                         <View style={styles.View17}>
                             <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/wifi.png')} />
                             <View>
                                 <Text style={styles.Text7}>Wi-Fi</Text>
-                                <Text style={styles.Text8}>Last synced: 3 hrs ago</Text>
+                                {naresh == false ?
+                                    <View>
+                                        <Text style={styles.Text8}>Wi-Fi settings</Text>
+                                    </View>
+                                    :
+                                    <View>
+                                        <Text style={styles.Text8}>Last synced: 8 mins ago </Text>
+                                    </View>
+                                }
                             </View>
                         </View>
                         <View style={styles.View18}>
-                            <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/toggleon.png')} />
+                            <Switch
+                                value={naresh}
+                                onValueChange={() => setnaresh(!naresh)}
+                                trackColor={{ false: '#767577', true: '#0000ff' }}
+                            />
                         </View>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setphrases(!phrases)}>
                     <View style={styles.View16}>
                         <View style={styles.View17}>
                             <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/big.png')} />
                             <View>
                                 <Text style={styles.Text7}>Frequent phrases</Text>
-                                <Text style={styles.Text8}>Last synced: 10 mins ago</Text>
+                                {phrases == false ?
+                                    <View>
+                                        <Text style={styles.Text8}>Frequent phrases</Text>
+                                    </View>
+                                    :
+                                    <View>
+                                        <Text style={styles.Text8}>Last synced: 5 mins ago </Text>
+                                    </View>
+                                }
                             </View>
                         </View>
                         <View style={styles.View18}>
-                            <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/toggleon.png')} />
+                            <Switch
+                                value={phrases}
+                                onValueChange={() => setphrases(!phrases)}
+                                trackColor={{ false: '#767577', true: '#0000ff' }}
+                            />
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -219,17 +272,23 @@ const XiaomiCloud = (props) => {
                 <View style={styles.View19}>
                     <Text style={styles.Text9}>SYNC SETTINGS</Text>
                 </View>
-                <View style={styles.View19}>
-                    <Text style={styles.Text10}>Quick sync</Text>
-                </View>
-                <View style={styles.View21}>
-                    <View style={styles.View20}>
-                        <Text style={styles.Text11} >Sync app data in real time. Power consumption will increase when this feature is on.</Text>
+                <TouchableOpacity onPress={() => setname(!name)}>
+                    <View style={styles.View19}>
+                        <Text style={styles.Text10}>Quick sync</Text>
                     </View>
-                    <View>
-                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/toggleoff.png')} />
+                    <View style={styles.View21}>
+                        <View style={styles.View20}>
+                            <Text style={styles.Text11} >Sync app data in real time. Power consumption will increase when this feature is on.</Text>
+                        </View>
+                        <View>
+                            <Switch
+                                value={name}
+                                onValueChange={() => setname(!name)}
+                                trackColor={{ false: '#767577', true: '#0000ff' }}
+                            />
+                        </View>
                     </View>
-                </View>
+                </TouchableOpacity>
 
             </ScrollView >
         </View >

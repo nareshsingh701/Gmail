@@ -1,11 +1,11 @@
 import * as React from 'react';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Image, Text } from 'react-native'
-
 
 
 import Home from '../screens/splash/home';
@@ -47,7 +47,9 @@ import NareshSingh7011111 from '../screens/nareshSingh7011111/nareshSingh7011111
 import Hometo from '../screens/splash/hometo';
 import Gmail from '../screens/gmail/gmail';
 import AddAccount from '../screens/addAccount/addAccount';
-import Checkbox from '../screens/checkbox/checkbox';
+import AnotherAccount from '../screens/anotherAccount/anotherAccount';
+import OnOff from '../screens/OnOff/OnOff';
+
 
 
 
@@ -190,7 +192,10 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="hometo" component={Hometo} />
                 <Stack.Screen options={{ headerShown: false }} name="gmail" component={Gmail} />
                 <Stack.Screen options={{ headerShown: false }} name="addAccount" component={AddAccount} />
-                <Stack.Screen options={{ headerShown: false }} name="checkbox" component={Checkbox} />
+                <Stack.Screen options={{ headerShown: false }} name="anotherAccount" component={AnotherAccount} />
+                <Stack.Screen options={{ headerShown: false }} name="OnOff" component={OnOff} />
+
+
 
 
             </Stack.Navigator>
