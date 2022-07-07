@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TextInput, Image, ScrollView, TouchableOpacity, Modal, } from 'react-native'
 import CheckBox from '@react-native-community/checkbox';
+import CircleCheckBox, { LABEL_POSITION } from 'react-native-circle-checkbox';
 import React, { useState } from 'react'
 
 const Search = (props) => {
@@ -17,6 +18,56 @@ const Search = (props) => {
     const [togglebox, setTogglebox] = useState(false)
     const [toggleDrafts, setToggleDrafts] = useState(false)
     const [toggleAll, setToggleAll] = useState(false)
+
+    const [toggleHas, setToggleHas] = useState(false)
+    const [toggleDocu, setToggleDocu] = useState(false)
+    const [toggleSlides, setToggleSlides] = useState(false)
+    const [toggleSheets, setToggleSheets] = useState(false)
+    const [toggleImages, setToggleImages] = useState(false)
+    const [togglePDFs, setTogglePDFs] = useState(false)
+    const [toggleVideos, setToggleVideos] = useState(false)
+
+    const [data, setData] = useState(false)
+    const [than, setThan] = useState(false)
+    const [older, setOlder] = useState(false)
+    const [months, setMonnths] = useState(false)
+    const [year, setYear] = useState(false)
+
+    const One = () => {
+        setData(true)
+        setThan(false)
+        setOlder(false)
+        setMonnths(false)
+        setYear(false)
+    }
+    const name = () => {
+        setData(false)
+        setThan(true)
+        setOlder(false)
+        setMonnths(false)
+        setYear(false)
+    }
+    const From = () => {
+        setData(false)
+        setThan(false)
+        setOlder(true)
+        setMonnths(false)
+        setYear(false)
+    }
+    const Custom = () => {
+        setData(false)
+        setThan(false)
+        setOlder(false)
+        setMonnths(true)
+        setYear(false)
+    }
+    const Renge = () => {
+        setData(false)
+        setThan(false)
+        setOlder(false)
+        setMonnths(false)
+        setYear(true)
+    }
     return (
         <View style={styles.container}>
 
@@ -382,13 +433,13 @@ const Search = (props) => {
                                         </View>
                                         <CheckBox
                                             disabled={false}
-                                            value={toggleCheckBox}
+                                            value={toggleHas}
                                             boxType={'square'}
                                             onCheckColor={'#fff'}
                                             onFillColor={'blue'}
                                             lineWidth={3}
                                             tintColor={'#000'}
-                                            onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                                            onValueChange={(newValue) => setToggleHas(newValue)}
                                         />
                                     </View>
                                 </View>
@@ -402,13 +453,13 @@ const Search = (props) => {
                                         </View>
                                         <CheckBox
                                             disabled={false}
-                                            value={toggleCheck}
+                                            value={toggleDocu}
                                             boxType={'square'}
                                             onCheckColor={'#fff'}
                                             onFillColor={'blue'}
                                             lineWidth={3}
                                             tintColor={'#000'}
-                                            onValueChange={(newValue) => setToggleCheck(newValue)}
+                                            onValueChange={(newValue) => setToggleDocu(newValue)}
                                         />
                                     </View>
                                 </View>
@@ -422,13 +473,13 @@ const Search = (props) => {
                                         </View>
                                         <CheckBox
                                             disabled={false}
-                                            value={toggleCheckname}
+                                            value={toggleSlides}
                                             boxType={'square'}
                                             onCheckColor={'#fff'}
                                             onFillColor={'blue'}
                                             lineWidth={3}
                                             tintColor={'#000'}
-                                            onValueChange={(newValue) => setToggleCheckname(newValue)}
+                                            onValueChange={(newValue) => setToggleSlides(newValue)}
                                         />
                                     </View>
                                 </View>
@@ -442,13 +493,13 @@ const Search = (props) => {
                                         </View>
                                         <CheckBox
                                             disabled={false}
-                                            value={togglename}
+                                            value={toggleSheets}
                                             boxType={'square'}
                                             onCheckColor={'#fff'}
                                             onFillColor={'blue'}
                                             lineWidth={3}
                                             tintColor={'#000'}
-                                            onValueChange={(newValue) => setTogglename(newValue)}
+                                            onValueChange={(newValue) => setToggleSheets(newValue)}
                                         />
                                     </View>
                                 </View>
@@ -462,13 +513,13 @@ const Search = (props) => {
                                         </View>
                                         <CheckBox
                                             disabled={false}
-                                            value={togglebox}
+                                            value={toggleImages}
                                             boxType={'square'}
                                             onCheckColor={'#fff'}
                                             onFillColor={'blue'}
                                             lineWidth={3}
                                             tintColor={'#000'}
-                                            onValueChange={(newValue) => setTogglebox(newValue)}
+                                            onValueChange={(newValue) => setToggleImages(newValue)}
                                         />
                                     </View>
                                 </View>
@@ -482,13 +533,13 @@ const Search = (props) => {
                                         </View>
                                         <CheckBox
                                             disabled={false}
-                                            value={toggleDrafts}
+                                            value={togglePDFs}
                                             boxType={'square'}
                                             onCheckColor={'#fff'}
                                             onFillColor={'blue'}
                                             lineWidth={3}
                                             tintColor={'#000'}
-                                            onValueChange={(newValue) => setToggleDrafts(newValue)}
+                                            onValueChange={(newValue) => setTogglePDFs(newValue)}
                                         />
                                     </View>
                                 </View>
@@ -502,13 +553,13 @@ const Search = (props) => {
                                         </View>
                                         <CheckBox
                                             disabled={false}
-                                            value={toggleAll}
+                                            value={toggleVideos}
                                             boxType={'square'}
                                             onCheckColor={'#fff'}
                                             onFillColor={'blue'}
                                             lineWidth={3}
                                             tintColor={'#000'}
-                                            onValueChange={(newValue) => setToggleAll(newValue)}
+                                            onValueChange={(newValue) => setToggleVideos(newValue)}
                                         />
                                     </View>
                                 </View>
@@ -540,24 +591,65 @@ const Search = (props) => {
                             <View style={styles.View7}>
                             </View>
                             <View style={styles.View16}>
-                                <Image resizeMode={'cover'} style={styles.Image10} source={require('../../assets/images/round.png')} />
-                                <Text style={styles.Text5}>Any time</Text>
+                                <CircleCheckBox
+                                    checked={data}
+                                    innerColor='#0000ff'
+                                    outerColor='#0000ff'
+                                    filterSize='22'
+                                    innerSize='14'
+                                    onToggle={(data) => One(One)}
+                                    labelPosition={LABEL_POSITION.RIGHT}
+                                />
+                                <Text style={styles.Text5} onPress={() => One(One)}>Any time</Text>
                             </View>
                             <View style={styles.View16}>
-                                <Image resizeMode={'cover'} style={styles.Image10} source={require('../../assets/images/round.png')} />
-                                <Text style={styles.Text5}>Older than a week</Text>
+                                <CircleCheckBox
+                                    checked={than}
+                                    innerColor='#0000ff'
+                                    outerColor='#0000ff'
+                                    filterSize='22'
+                                    innerSize='14'
+                                    onToggle={(than) => name(name)}
+                                    labelPosition={LABEL_POSITION.RIGHT}
+
+                                />
+                                <Text style={styles.Text5} onPress={() => name(name)}>Older than a week</Text>
                             </View>
                             <View style={styles.View16}>
-                                <Image resizeMode={'cover'} style={styles.Image10} source={require('../../assets/images/round.png')} />
-                                <Text style={styles.Text5}>Older than a month</Text>
+                                <CircleCheckBox
+                                    checked={older}
+                                    innerColor='#0000ff'
+                                    outerColor='#0000ff'
+                                    filterSize='22'
+                                    innerSize='14'
+                                    onToggle={(older) => From(From)}
+                                    labelPosition={LABEL_POSITION.RIGHT}
+                                />
+                                <Text style={styles.Text5} onPress={() => From(From)}>Older than a month</Text>
                             </View>
                             <View style={styles.View16}>
-                                <Image resizeMode={'cover'} style={styles.Image10} source={require('../../assets/images/round.png')} />
-                                <Text style={styles.Text5}>Older than 6 months</Text>
+                                <CircleCheckBox
+                                    checked={months}
+                                    innerColor='#0000ff'
+                                    outerColor='#0000ff'
+                                    filterSize='22'
+                                    innerSize='14'
+                                    onToggle={(months) => Custom(Custom)}
+                                    labelPosition={LABEL_POSITION.RIGHT}
+                                />
+                                <Text style={styles.Text5} onPress={() => Custom(Custom)}>Older than 6 months</Text>
                             </View>
                             <View style={styles.View16}>
-                                <Image resizeMode={'cover'} style={styles.Image10} source={require('../../assets/images/round.png')} />
-                                <Text style={styles.Text5}>Older than a year</Text>
+                                <CircleCheckBox
+                                    checked={year}
+                                    innerColor='#0000ff'
+                                    outerColor='#0000ff'
+                                    filterSize='22'
+                                    innerSize='14'
+                                    onToggle={(year) => Renge(Renge)}
+                                    labelPosition={LABEL_POSITION.RIGHT}
+                                />
+                                <Text style={styles.Text5} onPress={() => Renge(Renge)}>Older than a year</Text>
                             </View>
                             <View style={styles.View17}>
                                 <Text style={styles.Text6}>Custom renge</Text>
@@ -593,27 +685,13 @@ const styles = StyleSheet.create({
     },
     Image: {
         marginTop: 70,
-        // marginLeft: 25
+
     },
     Imageone: {
         marginTop: 70,
         marginLeft: 15
     },
-    // Viewtow: {
-    //     height: 120,
-    //     width: 250,
-    //     backgroundColor: '#e6e6e6',
-    // },
-    // Viewthree: {
-    //     height: 120,
-    //     width: 80,
-    //     backgroundColor: '#e6e6e6',
-    // },
-    // Viewfor: {
-    //     height: 120,
-    //     width: 80,
-    //     backgroundColor: '#e6e6e6',
-    // },
+
     View: {
         flexDirection: 'row'
     },

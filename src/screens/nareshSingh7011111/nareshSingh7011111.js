@@ -1,7 +1,23 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native'
-import React from 'react'
+import CheckBox from '@react-native-community/checkbox';
+import React, { useState } from 'react'
 
 const NareshSingh7011111 = (props) => {
+
+    const [toggleCheckBox, setToggleCheckBox] = useState(false)
+    const [toggleCheckname, setToggleCheckname] = useState(false)
+    const [toggleCheckview, setToggleCheckview] = useState(false)
+    const [toggleCheckSmart, setToggleCheckSmart] = useState(false)
+    const [google, setGoogle] = useState(false)
+    const [email, setEmail] = useState(false)
+    const [reply, setReply] = useState(false)
+    const [chat, setChat] = useState(false)
+    const [meet, setMeet] = useState(false)
+    const [ringing, setRinging] = useState(false)
+    const [usage, setUsage] = useState(false)
+    const [messages, setMessages] = useState(false)
+    const [when, setWhen] = useState(false)
+
     return (
         <View style={styles.container}>
             <View style={styles.View1}>
@@ -53,7 +69,16 @@ const NareshSingh7011111 = (props) => {
                 </View>
                 <View style={styles.View7}>
                     <Text style={styles.Text3}>Chat notification</Text>
-                    <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/check.png')} />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleCheckBox}
+                        boxType={'square'}
+                        onCheckColor={'#fff'}
+                        onFillColor={'blue'}
+                        lineWidth={3}
+                        tintColor={'#000'}
+                        onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    />
                 </View>
                 <View style={styles.View5}>
                 </View>
@@ -78,7 +103,16 @@ const NareshSingh7011111 = (props) => {
                         <Text style={styles.Text3}>Chat</Text>
                         <Text style={styles.Text4}>Show the Chat and Spaces tabs</Text>
                     </View>
-                    <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/check.png')} />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleCheckname}
+                        boxType={'square'}
+                        onCheckColor={'#fff'}
+                        onFillColor={'blue'}
+                        lineWidth={3}
+                        tintColor={'#000'}
+                        onValueChange={(newValue) => setToggleCheckname(newValue)}
+                    />
                 </View>
                 <View style={styles.View5}>
                 </View>
@@ -96,9 +130,20 @@ const NareshSingh7011111 = (props) => {
                 </View>
                 <View style={styles.View6}>
                     <Text style={styles.Text3}>Conversation view</Text>
-                    <View style={styles.View8}>
-                        <Text style={styles.Text4}>Group emails with the same topic together. This setting may take some time to apply.</Text>
-                        <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/check.png')} />
+                    <View style={styles.View9}>
+                        <View style={styles.View8}>
+                            <Text style={styles.Text4}>Group emails with the same topic together. This setting may take some time to apply.</Text>
+                        </View>
+                        <CheckBox
+                            disabled={false}
+                            value={toggleCheckview}
+                            boxType={'square'}
+                            onCheckColor={'#fff'}
+                            onFillColor={'blue'}
+                            lineWidth={3}
+                            tintColor={'#000'}
+                            onValueChange={(newValue) => setToggleCheckview(newValue)}
+                        />
                     </View>
                 </View>
                 <View style={styles.View5}>
@@ -109,7 +154,16 @@ const NareshSingh7011111 = (props) => {
                         <View style={styles.View10}>
                             <Text style={styles.Text4}>Gmail, Chat and Meet may use my email, chat and video content to personalise my experience and provide smart features. If lopt out, such features will be turned off.</Text>
                         </View>
-                        <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/check.png')} />
+                        <CheckBox
+                            disabled={false}
+                            value={toggleCheckSmart}
+                            boxType={'square'}
+                            onCheckColor={'#fff'}
+                            onFillColor={'blue'}
+                            lineWidth={3}
+                            tintColor={'#000'}
+                            onValueChange={(newValue) => setToggleCheckSmart(newValue)}
+                        />
                     </View>
                 </View>
                 <View style={styles.View5}>
@@ -120,7 +174,16 @@ const NareshSingh7011111 = (props) => {
                         <View style={styles.View10}>
                             <Text style={styles.Text4}>Gmail, Chat and Meet may use my email, chat and video content to personalise my experience and provide smart features. If lopt out, such features will be turned off.</Text>
                         </View>
-                        <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/check.png')} />
+                        <CheckBox
+                            disabled={false}
+                            value={google}
+                            boxType={'square'}
+                            onCheckColor={'#fff'}
+                            onFillColor={'blue'}
+                            lineWidth={3}
+                            tintColor={'#000'}
+                            onValueChange={(newValue) => setGoogle(newValue)}
+                        />
                     </View>
                 </View>
                 <View style={styles.View5}>
@@ -130,7 +193,16 @@ const NareshSingh7011111 = (props) => {
                         <Text style={styles.Text3}>Smart Compose in email</Text>
                         <Text style={styles.Text4}>Show predictive writing suggestions</Text>
                     </View>
-                    <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/check.png')} />
+                    <CheckBox
+                        disabled={false}
+                        value={email}
+                        boxType={'square'}
+                        onCheckColor={'#fff'}
+                        onFillColor={'blue'}
+                        lineWidth={3}
+                        tintColor={'#000'}
+                        onValueChange={(newValue) => setEmail(newValue)}
+                    />
                 </View>
                 <View style={styles.View5}>
                 </View>
@@ -139,7 +211,16 @@ const NareshSingh7011111 = (props) => {
                         <Text style={styles.Text3}>Smart Reply in email</Text>
                         <Text style={styles.Text4}>Show suggested replies when available</Text>
                     </View>
-                    <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/check.png')} />
+                    <CheckBox
+                        disabled={false}
+                        value={reply}
+                        boxType={'square'}
+                        onCheckColor={'#fff'}
+                        onFillColor={'blue'}
+                        lineWidth={3}
+                        tintColor={'#000'}
+                        onValueChange={(newValue) => setReply(newValue)}
+                    />
                 </View>
                 <View style={styles.View5}>
                 </View>
@@ -148,7 +229,16 @@ const NareshSingh7011111 = (props) => {
                         <Text style={styles.Text3}>Smart Reply in Chat</Text>
                         <Text style={styles.Text4}>Show suggested replies when available</Text>
                     </View>
-                    <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/checkbox.png')} />
+                    <CheckBox
+                        disabled={false}
+                        value={chat}
+                        boxType={'square'}
+                        onCheckColor={'#fff'}
+                        onFillColor={'blue'}
+                        lineWidth={3}
+                        tintColor={'#000'}
+                        onValueChange={(newValue) => setChat(newValue)}
+                    />
                 </View>
                 <View style={styles.View5}>
                 </View>
@@ -171,7 +261,16 @@ const NareshSingh7011111 = (props) => {
                 </View>
                 <View style={styles.View7}>
                     <Text style={styles.Text3}>Show the Meet tab for video calling</Text>
-                    <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/checkbox.png')} />
+                    <CheckBox
+                        disabled={false}
+                        value={meet}
+                        boxType={'square'}
+                        onCheckColor={'#fff'}
+                        onFillColor={'blue'}
+                        lineWidth={3}
+                        tintColor={'#000'}
+                        onValueChange={(newValue) => setMeet(newValue)}
+                    />
                 </View>
                 <View style={styles.View5}>
                 </View>
@@ -180,7 +279,16 @@ const NareshSingh7011111 = (props) => {
                         <Text style={styles.Text3}>Call ringing</Text>
                         <Text style={styles.Text4}>Ring for incoming calls</Text>
                     </View>
-                    <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/check.png')} />
+                    <CheckBox
+                        disabled={false}
+                        value={ringing}
+                        boxType={'square'}
+                        onCheckColor={'#fff'}
+                        onFillColor={'blue'}
+                        lineWidth={3}
+                        tintColor={'#000'}
+                        onValueChange={(newValue) => setRinging(newValue)}
+                    />
                 </View>
                 <View style={styles.View4}>
                     <Text style={styles.Text2}>Nudges</Text>
@@ -199,7 +307,16 @@ const NareshSingh7011111 = (props) => {
                 </View>
                 <View style={styles.View7}>
                     <Text style={styles.Text3}>Sync Gmail</Text>
-                    <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/check.png')} />
+                    <CheckBox
+                        disabled={false}
+                        value={usage}
+                        boxType={'square'}
+                        onCheckColor={'#fff'}
+                        onFillColor={'blue'}
+                        lineWidth={3}
+                        tintColor={'#000'}
+                        onValueChange={(newValue) => setUsage(newValue)}
+                    />
                 </View>
                 <View style={styles.View5}>
                 </View>
@@ -211,9 +328,20 @@ const NareshSingh7011111 = (props) => {
                 </View>
                 <View style={styles.View6}>
                     <Text style={styles.Text3}>Download attachments</Text>
-                    <View style={styles.View8}>
-                        <Text style={styles.Text4}>Auto- download attachments to recent messages via WiFi</Text>
-                        <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/check.png')} />
+                    <View style={styles.View9}>
+                        <View style={styles.View8}>
+                            <Text style={styles.Text4}>Auto- download attachments to recent messages via WiFi</Text>
+                        </View>
+                        <CheckBox
+                            disabled={false}
+                            value={messages}
+                            boxType={'square'}
+                            onCheckColor={'#fff'}
+                            onFillColor={'blue'}
+                            lineWidth={3}
+                            tintColor={'#000'}
+                            onValueChange={(newValue) => setMessages(newValue)}
+                        />
                     </View>
                 </View>
                 <View style={styles.View5}>
@@ -228,9 +356,18 @@ const NareshSingh7011111 = (props) => {
                     <Text style={styles.Text3}>Enable dynamic email</Text>
                     <View style={styles.View11}>
                         <View style={styles.View8}>
-                            <Text style={styles.Text4}>Display dynamic email content when available</Text>
+                            <Text style={styles.Text4} onPress={() => setWhen(true)}>Display dynamic email content when available</Text>
                         </View>
-                        <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/check.png')} />
+                        <CheckBox
+                            disabled={false}
+                            value={when}
+                            boxType={'square'}
+                            onCheckColor={'#fff'}
+                            onFillColor={'blue'}
+                            lineWidth={3}
+                            tintColor={'#000'}
+                            onValueChange={(newValue) => setWhen(newValue)}
+                        />
                     </View>
                 </View>
 
@@ -292,7 +429,8 @@ const styles = StyleSheet.create({
     },
     View6: {
         paddingHorizontal: 16,
-        marginTop: 18
+        marginTop: 18,
+        justifyContent: 'space-between'
     },
     Text4: {
         fontSize: 16,
@@ -310,7 +448,6 @@ const styles = StyleSheet.create({
     },
     View8: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
         width: 300
     },
     View9: {

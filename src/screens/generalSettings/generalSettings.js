@@ -1,11 +1,57 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, Modal } from 'react-native'
+import CheckBox from '@react-native-community/checkbox';
+import CircleCheckBox, { LABEL_POSITION } from 'react-native-circle-checkbox';
 import React, { useState } from 'react'
-import { withSequence } from 'react-native-reanimated';
+
 
 const GeneralSettings = (props) => {
     const [modalTheme, setModalTheme] = useState(false);
     const [modalDefault, setModalDefalt] = useState(false);
     const [ModalDot, setModalDot] = useState(false);
+
+    const [toggleCheckBox, setToggleCheckBox] = useState(false)
+    const [box, setBox] = useState(false)
+    const [auto, setAuto] = useState(false)
+    const [beleting, setBeleting] = useState(false)
+    const [before, setBefore] = useState(false)
+    const [sending, setSending] = useState(false)
+
+    const [data, setData] = useState(false)
+    const [than, setThan] = useState(false)
+
+    const One = () => {
+        setData(true)
+        setThan(false)
+    }
+    const name = () => {
+        setData(false)
+        setThan(true)
+    }
+
+    const [light, setLight] = useState(false)
+    const [dark, setDark] = useState(false)
+    const [system, setSystem] = useState(false)
+
+    const email = () => {
+        setLight(true)
+        setDark(false)
+        setSystem(false)
+    }
+    const list = () => {
+        setLight(false)
+        setDark(true)
+        setSystem(false)
+    }
+    const act = () => {
+        setLight(false)
+        setDark(false)
+        setSystem(true)
+    }
+
+
+
+
+
 
     return (
         <View style={styles.container}>
@@ -47,7 +93,16 @@ const GeneralSettings = (props) => {
                         <Text style={styles.Text2}>Manage notification </Text>
                         <View style={styles.View5}>
                             <Text style={styles.Text3}>Group emails in the same conversation for IMAP,POP3 and Exchange accounts</Text>
-                            <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/check.png')} />
+                            <CheckBox
+                                disabled={false}
+                                value={toggleCheckBox}
+                                boxType={'square'}
+                                onCheckColor={'#fff'}
+                                onFillColor={'blue'}
+                                lineWidth={3}
+                                tintColor={'#000'}
+                                onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                            />
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -86,7 +141,16 @@ const GeneralSettings = (props) => {
                                 <Text style={styles.Text2}>Auto-fit messages</Text>
                                 <Text style={styles.Text3}>Shrink messages to fit the screen</Text>
                             </View>
-                            <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/checkbox.png')} />
+                            <CheckBox
+                                disabled={false}
+                                value={box}
+                                boxType={'square'}
+                                onCheckColor={'#fff'}
+                                onFillColor={'blue'}
+                                lineWidth={3}
+                                tintColor={'#000'}
+                                onValueChange={(newValue) => setBox(newValue)}
+                            />
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -107,7 +171,16 @@ const GeneralSettings = (props) => {
                                 <Text style={styles.Text2}>Open web links in Gmail</Text>
                                 <Text style={styles.Text3}>Turn on for faster browsing</Text>
                             </View>
-                            <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/check.png')} />
+                            <CheckBox
+                                disabled={false}
+                                value={auto}
+                                boxType={'square'}
+                                onCheckColor={'#fff'}
+                                onFillColor={'blue'}
+                                lineWidth={3}
+                                tintColor={'#000'}
+                                onValueChange={(newValue) => setAuto(newValue)}
+                            />
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -117,7 +190,16 @@ const GeneralSettings = (props) => {
                 <TouchableOpacity>
                     <View style={styles.View8}>
                         <Text style={styles.Text2}>Confirm before deleting</Text>
-                        <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/checkbox.png')} />
+                        <CheckBox
+                            disabled={false}
+                            value={beleting}
+                            boxType={'square'}
+                            onCheckColor={'#fff'}
+                            onFillColor={'blue'}
+                            lineWidth={3}
+                            tintColor={'#000'}
+                            onValueChange={(newValue) => setBeleting(newValue)}
+                        />
                     </View>
                 </TouchableOpacity>
                 <View style={styles.View3}>
@@ -125,7 +207,16 @@ const GeneralSettings = (props) => {
                 <TouchableOpacity>
                     <View style={styles.View8}>
                         <Text style={styles.Text2}>Confirm before archiving</Text>
-                        <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/check.png')} />
+                        <CheckBox
+                            disabled={false}
+                            value={before}
+                            boxType={'square'}
+                            onCheckColor={'#fff'}
+                            onFillColor={'blue'}
+                            lineWidth={3}
+                            tintColor={'#000'}
+                            onValueChange={(newValue) => setBefore(newValue)}
+                        />
                     </View>
                 </TouchableOpacity>
                 <View style={styles.View3}>
@@ -133,7 +224,16 @@ const GeneralSettings = (props) => {
                 <TouchableOpacity>
                     <View style={styles.View8}>
                         <Text style={styles.Text2}>Confirm before sending</Text>
-                        <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/checkbox.png')} />
+                        <CheckBox
+                            disabled={false}
+                            value={sending}
+                            boxType={'square'}
+                            onCheckColor={'#fff'}
+                            onFillColor={'blue'}
+                            lineWidth={3}
+                            tintColor={'#000'}
+                            onValueChange={(newValue) => setSending(newValue)}
+                        />
                     </View>
                 </TouchableOpacity>
             </ScrollView>
@@ -150,18 +250,42 @@ const GeneralSettings = (props) => {
                             <Text style={styles.Text2}>Theme</Text>
                         </View>
                         <View style={styles.View12}>
-                            <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/round.png')} />
-                            <Text style={styles.Text6}>Light</Text>
+                            < CircleCheckBox
+                                checked={light}
+                                innerColor='#0000ff'
+                                outerColor='#0000ff'
+                                filterSize='22'
+                                innerSize='14'
+                                onToggle={(data) => email(email)}
+                                labelPosition={LABEL_POSITION.RIGHT}
+                            />
+                            <Text style={styles.Text6} onPress={() => email(email)}>Light</Text>
                         </View>
                         <View style={styles.View12}>
-                            <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/round.png')} />
-                            <Text style={styles.Text6}>Dark</Text>
+                            < CircleCheckBox
+                                checked={dark}
+                                innerColor='#0000ff'
+                                outerColor='#0000ff'
+                                filterSize='22'
+                                innerSize='14'
+                                onToggle={(data) => list(list)}
+                                labelPosition={LABEL_POSITION.RIGHT}
+                            />
+                            <Text style={styles.Text6} onPress={() => list(list)}>Dark</Text>
                         </View>
                         <View style={styles.View12}>
                             <View style={styles.View13}>
-                                <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/blue.png')} />
+                                < CircleCheckBox
+                                    checked={system}
+                                    innerColor='#0000ff'
+                                    outerColor='#0000ff'
+                                    filterSize='22'
+                                    innerSize='14'
+                                    onToggle={(data) => act(act)}
+                                    labelPosition={LABEL_POSITION.RIGHT}
+                                />
                             </View>
-                            <Text style={styles.Text6}>System default</Text>
+                            <Text style={styles.Text6} onPress={() => act(act)}>System default</Text>
                         </View>
                         <TouchableOpacity
                             style={[styles.croos, styles.buttonClose]}
@@ -194,13 +318,30 @@ const GeneralSettings = (props) => {
                         </View>
                         <View style={styles.View12}>
                             <View style={styles.View13}>
-                                <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/blue.png')} />
+                                < CircleCheckBox
+                                    checked={data}
+                                    innerColor='#0000ff'
+                                    outerColor='#0000ff'
+                                    filterSize='22'
+                                    innerSize='14'
+                                    onToggle={(data) => One(One)}
+                                    labelPosition={LABEL_POSITION.RIGHT}
+                                />
                             </View>
-                            <Text style={styles.Text6}>Archive</Text>
+                            <Text style={styles.Text6} onPress={() => One(One)}>Archive</Text>
                         </View>
                         <View style={styles.View12}>
-                            <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/round.png')} />
-                            <Text style={styles.Text6}>Delete</Text>
+                            <CircleCheckBox
+                                checked={than}
+                                innerColor='#0000ff'
+                                outerColor='#0000ff'
+                                filterSize='22'
+                                innerSize='14'
+                                onToggle={(than) => name(name)}
+                                labelPosition={LABEL_POSITION.RIGHT}
+
+                            />
+                            <Text style={styles.Text6} onPress={() => name(name)}>Delete</Text>
                         </View>
                         <TouchableOpacity
                             style={[styles.croos, styles.buttonClose]}
@@ -213,44 +354,6 @@ const GeneralSettings = (props) => {
                     </View>
                 </View>
             </Modal>
-
-
-
-
-
-            <Modal
-                animationType="none"
-                transparent={true}
-                visible={modalDefault}
-
-            >
-                <View style={styles.View9}>
-                    <View style={styles.View15}>
-                        <View style={styles.View11}>
-                            <Text style={styles.Text2}>Dafault notification action</Text>
-                        </View>
-                        <View style={styles.View12}>
-                            <View style={styles.View13}>
-                                <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/blue.png')} />
-                            </View>
-                            <Text style={styles.Text6}>Archive</Text>
-                        </View>
-                        <View style={styles.View12}>
-                            <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/round.png')} />
-                            <Text style={styles.Text6}>Delete</Text>
-                        </View>
-                        <TouchableOpacity
-                            style={[styles.croos, styles.buttonClose]}
-                            onPress={() => setModalDefalt(!modalDefault)}
-                        >
-                            <View style={styles.View14}>
-                                <Text style={styles.Text7}>Cancel</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-            </Modal>
-
 
 
 
