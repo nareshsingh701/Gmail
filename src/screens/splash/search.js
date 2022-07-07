@@ -10,6 +10,7 @@ const Search = (props) => {
     const [modalLabels, setModalLabels] = useState(false);
     const [modalAttachment, setModalAttachment] = useState(false);
     const [modalData, setModalData] = useState(false);
+    const [Name, setName] = useState(false);
 
     const [toggleCheckBox, setToggleCheckBox] = useState(false)
     const [toggleCheck, setToggleCheck] = useState(false)
@@ -70,7 +71,6 @@ const Search = (props) => {
     }
     return (
         <View style={styles.container}>
-
             < View style={styles.Viewone}>
                 <View style={styles.Viewfor}>
                     <TouchableOpacity onPress={() => props.navigation.navigate("home")}>
@@ -85,7 +85,7 @@ const Search = (props) => {
                     />
                 </View>
                 <View style={styles.Viewthree}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => setName(true)}>
                         <Image resizeMode={'cover'} style={styles.Image} source={require('../../assets/images/recorder.png')} />
                     </TouchableOpacity>
                 </View>
@@ -141,7 +141,6 @@ const Search = (props) => {
                     animationType="slide"
                     transparent={true}
                     visible={modalVisible}
-
                 >
                     <View style={styles.centeredView}>
                         <View style={styles.modalView}>
@@ -161,7 +160,6 @@ const Search = (props) => {
                             </View>
                             <View style={styles.View7}>
                             </View>
-
                             <View style={styles.View8}>
                                 <Text>Suggestions</Text>
                                 <TouchableOpacity onPress={() => alert('About suggested people Google suggests people based on your interactions.')}>
@@ -186,7 +184,6 @@ const Search = (props) => {
                     animationType="slide"
                     transparent={true}
                     visible={modalFrom}
-
                 >
                     <View style={styles.centeredView}>
                         <View style={styles.modalView}>
@@ -206,7 +203,6 @@ const Search = (props) => {
                             </View>
                             <View style={styles.View7}>
                             </View>
-
                             <View style={styles.View8}>
                                 <Text>Suggestions</Text>
                                 <TouchableOpacity onPress={() => alert('About suggested people Google suggests people based on your interactions.')}>
@@ -658,6 +654,37 @@ const Search = (props) => {
                     </View>
                 </Modal>
             </View>
+
+
+
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={Name}
+            >
+                <View style={styles.View19}>
+                    <View style={styles.View18}>
+                        <Text style={styles.Text7}>Google</Text>
+                        <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/roud.jpg')} />
+                        <TouchableOpacity
+                            style={[styles.croos, styles.buttonClose]}
+                            onPress={() => setName(!Name)}
+                        >
+                            <Text style={styles.Text8}>Didn`t catch that. Try speaking again.</Text>
+                        </TouchableOpacity>
+                        <View style={styles.View20}>
+                            <Text style={styles.Text9}>Try again</Text>
+                        </View>
+                        <Text style={styles.Text10}>English</Text>
+                    </View>
+                </View>
+
+            </Modal>
+
+
+
+
+
         </View>
     )
 }
@@ -878,5 +905,50 @@ const styles = StyleSheet.create({
     Image10: {
         width: 30,
         height: 30
+    },
+    View18: {
+        width: '100%',
+        height: 315,
+        backgroundColor: '#fff',
+        borderRadius: 5,
+        alignItems: 'center',
+        paddingHorizontal: 20
+    },
+    View19: {
+        flex: 1,
+        paddingHorizontal: 10,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    Text7: {
+        fontSize: 30,
+        fontWeight: '500',
+        color: '#404040'
+    },
+    Image9: {
+        width: 80,
+        height: 80,
+        marginTop: 25
+    },
+    Text8: {
+        fontSize: 20,
+        textAlign: 'center',
+        marginTop: 20
+    },
+    View20: {
+        width: 125,
+        height: 40,
+        borderWidth: 0.3,
+        borderRadius: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 15
+    },
+    Text9: {
+        color: '#0033cc',
+        fontSize: 17
+    },
+    Text10: {
+        marginTop: 15
     }
 })

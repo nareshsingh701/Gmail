@@ -18,6 +18,8 @@ const NareshSingh7011111 = (props) => {
     const [messages, setMessages] = useState(false)
     const [when, setWhen] = useState(false)
 
+
+
     return (
         <View style={styles.container}>
             <View style={styles.View1}>
@@ -356,7 +358,7 @@ const NareshSingh7011111 = (props) => {
                     <Text style={styles.Text3}>Enable dynamic email</Text>
                     <View style={styles.View11}>
                         <View style={styles.View8}>
-                            <Text style={styles.Text4} onPress={() => setWhen(true)}>Display dynamic email content when available</Text>
+                            <Text style={styles.Text4} >Display dynamic email content when available</Text>
                         </View>
                         <CheckBox
                             disabled={false}

@@ -49,6 +49,7 @@ import Gmail from '../screens/gmail/gmail';
 import AddAccount from '../screens/addAccount/addAccount';
 import AnotherAccount from '../screens/anotherAccount/anotherAccount';
 import OnOff from '../screens/OnOff/OnOff';
+import Reply from '../screens/reply/reply';
 
 
 
@@ -194,6 +195,7 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="addAccount" component={AddAccount} />
                 <Stack.Screen options={{ headerShown: false }} name="anotherAccount" component={AnotherAccount} />
                 <Stack.Screen options={{ headerShown: false }} name="OnOff" component={OnOff} />
+                <Stack.Screen options={{ headerShown: false }} name="reply" component={Reply} />
 
 
 

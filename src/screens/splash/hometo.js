@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 const Hometo = (props) => {
     const [ModalDot, setModalDot] = useState(false);
     const [ModalThreeDot, setModalThreeDot] = useState(false);
+    const [Delete, setDelete] = useState(false);
     return (
         <View style={styles.container}>
             <View style={styles.View1}>
@@ -11,7 +12,7 @@ const Hometo = (props) => {
                     <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/back.png')} />
                 </TouchableOpacity>
                 <View style={styles.View2} >
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => setDelete(true)}>
                         <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/openbox.png')} />
                     </TouchableOpacity>
                     <TouchableOpacity>
@@ -44,7 +45,9 @@ const Hometo = (props) => {
                     <View style={styles.View10}>
                         <Text style={styles.Text3}>Google New</Text>
                         <Text style={styles.Text5}>  Yesterday</Text>
-                        <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/upleft.png')} />
+                        <TouchableOpacity onPress={() => props.navigation.navigate('reply')}>
+                            <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/upleft.png')} />
+                        </TouchableOpacity>
                         <TouchableOpacity onPress={() => setModalDot(true)}>
                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/givn.png')} />
                         </TouchableOpacity>
@@ -55,18 +58,10 @@ const Hometo = (props) => {
                 </View>
             </View>
 
-
-
-
-
-
-
-
             <Modal
                 animationType="none"
                 transparent={true}
                 visible={ModalDot}
-
             >
                 <View style={styles.View11}>
                     <View style={styles.View12}>
@@ -93,24 +88,14 @@ const Hometo = (props) => {
                         <View style={styles.View13}>
                             <Text style={styles.Text6}>Block"Google New" </Text>
                         </View>
-
                     </View>
                 </View>
             </Modal>
-
-
-
-
-
-
-
-
 
             <Modal
                 animationType="none"
                 transparent={true}
                 visible={ModalThreeDot}
-
             >
                 <View style={styles.View14}>
                     <View style={styles.View15}>
@@ -146,10 +131,33 @@ const Hometo = (props) => {
                         <View style={styles.View13}>
                             <Text style={styles.Text6}>Help and feedback </Text>
                         </View>
-
                     </View>
                 </View>
             </Modal>
+
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={Delete}
+            >
+                <View style={styles.View17}>
+                    <View style={styles.View16}>
+                        <Text style={styles.Text7}>Archive this conversation?</Text>
+                        <View style={styles.View18}>
+                            <TouchableOpacity
+                                style={[styles.croos, styles.buttonClose]}
+                                onPress={() => setDelete(!Delete)}
+                            >
+                                <Text style={{ color: 'blue', fontSize: 16 }}>Cancel</Text>
+                            </TouchableOpacity>
+                            <Text style={{ color: 'blue', fontSize: 16 }}>OK</Text>
+                        </View>
+                    </View>
+                </View>
+            </Modal>
+
+
+
 
         </View>
     )
@@ -251,11 +259,6 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
 
-
-
-
-
-
     View12: {
         width: 220,
         height: 265,
@@ -283,9 +286,28 @@ const styles = StyleSheet.create({
     View14: {
         alignSelf: 'flex-end'
     },
+    View16: {
+        height: 135,
+        width: '100%',
+        backgroundColor: '#fff',
+        borderRadius: 30,
+        paddingHorizontal: 18
+    },
+    View17: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingHorizontal: 35
+    },
+    Text7: {
+        fontSize: 16,
+        marginTop: 20
+    },
+    View18: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        marginLeft: 90,
+        marginTop: 40
 
-
-
-
-
+    }
 })
