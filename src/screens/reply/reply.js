@@ -21,8 +21,8 @@ const Reply = (props) => {
                 <TouchableOpacity>
                     <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/givn.png')} />
                 </TouchableOpacity>
-
             </View>
+            <Text style={styles.Text2}>From      nareshsingh7011111@gmail.com</Text>
         </View>
     )
 }
@@ -56,5 +56,9 @@ const styles = StyleSheet.create({
     Image1: {
         width: 30,
         height: 30
+    },
+    Text2: {
+        fontSize: 17,
+        marginTop: 35
     }
 })

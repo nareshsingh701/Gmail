@@ -72,23 +72,23 @@ const Search = (props) => {
     return (
         <View style={styles.container}>
             < View style={styles.Viewone}>
-                <View style={styles.Viewfor}>
-                    <TouchableOpacity onPress={() => props.navigation.navigate("home")}>
-                        <Image resizeMode={'cover'} style={styles.Imageone} source={require('../../assets/images/back.png')} />
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.Viewtow}>
-                    <TextInput
-                        style={styles.TextInput}
-                        placeholder='Search in emails'
-                        placeholderTextColor="#000"
-                    />
-                </View>
-                <View style={styles.Viewthree}>
-                    <TouchableOpacity onPress={() => setName(true)}>
-                        <Image resizeMode={'cover'} style={styles.Image} source={require('../../assets/images/recorder.png')} />
-                    </TouchableOpacity>
-                </View>
+                {/* <View style={styles.Viewfor}> */}
+                <TouchableOpacity onPress={() => props.navigation.navigate("home")}>
+                    <Image resizeMode={'cover'} style={styles.Imageone} source={require('../../assets/images/back.png')} />
+                </TouchableOpacity>
+                {/* </View>
+                <View style={styles.Viewtow}> */}
+                <TextInput
+                    style={styles.Text}
+                    placeholder='Search in emails'
+                    placeholderTextColor="#000"
+                />
+                {/* </View>
+                <View style={styles.Viewthree}> */}
+                <TouchableOpacity onPress={() => setName(true)}>
+                    <Image resizeMode={'cover'} style={styles.Image} source={require('../../assets/images/recorder.png')} />
+                </TouchableOpacity>
+                {/* </View> */}
             </View>
             <ScrollView horizontal={true}>
                 <View style={styles.View}>
@@ -248,12 +248,12 @@ const Search = (props) => {
                             </View>
                             <View style={styles.View12}>
                             </View>
-                            <TouchableOpacity >
+                            <TouchableOpacity onPress={() => setToggleCheckBox(!toggleCheckBox)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/cd.png')} />
-                                            <Text style={styles.Text4}>Starred</Text>
+                                            <Text style={styles.Text4} >Starred</Text>
                                         </View>
                                         <CheckBox
                                             disabled={false}
@@ -268,12 +268,12 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setToggleCheck(!toggleCheck)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/ttt.png')} />
-                                            <Text style={styles.Text4}>Snoozrd</Text>
+                                            <Text style={styles.Text4} >Snoozrd</Text>
                                         </View>
                                         <CheckBox
                                             disabled={false}
@@ -288,12 +288,12 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setToggleCheckname(!toggleCheckname)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/important.png')} />
-                                            <Text style={styles.Text4}>Important</Text>
+                                            <Text style={styles.Text4} >Important</Text>
                                         </View>
                                         <CheckBox
                                             disabled={false}
@@ -308,12 +308,12 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setTogglename(!togglename)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/sent.png')} />
-                                            <Text style={styles.Text4}>Sent</Text>
+                                            <Text style={styles.Text4} >Sent</Text>
                                         </View>
                                         <CheckBox
                                             disabled={false}
@@ -328,12 +328,12 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setTogglebox(!togglebox)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/send.png')} />
-                                            <Text style={styles.Text4}>Scheduled</Text>
+                                            <Text style={styles.Text4} >Scheduled</Text>
                                         </View>
                                         <CheckBox
                                             disabled={false}
@@ -348,12 +348,12 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setToggleDrafts(!toggleDrafts)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/exmee.png')} />
-                                            <Text style={styles.Text4}>Drafts</Text>
+                                            <Text style={styles.Text4} >Drafts</Text>
                                         </View>
                                         <CheckBox
                                             disabled={false}
@@ -368,12 +368,12 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setToggleAll(!toggleAll)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/plp.png')} />
-                                            <Text style={styles.Text4}>All mail</Text>
+                                            <Text style={styles.Text4} >All mail</Text>
                                         </View>
                                         <CheckBox
                                             disabled={false}
@@ -392,12 +392,6 @@ const Search = (props) => {
                     </View>
                 </Modal>
             </View>
-
-
-
-
-
-
 
             <View style={styles.centeredView}>
                 <Modal
@@ -420,12 +414,12 @@ const Search = (props) => {
                             </View>
                             <View style={styles.View12}>
                             </View>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setToggleHas(!toggleHas)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/attachment.png')} />
-                                            <Text style={styles.Text4}>Has any attachment</Text>
+                                            <Text style={styles.Text4} >Has any attachment</Text>
                                         </View>
                                         <CheckBox
                                             disabled={false}
@@ -440,12 +434,12 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setToggleDocu(!toggleDocu)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
                                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/document.png')} />
-                                            <Text style={styles.Text4}>Documents</Text>
+                                            <Text style={styles.Text4} >Documents</Text>
                                         </View>
                                         <CheckBox
                                             disabled={false}
@@ -460,7 +454,7 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setToggleSlides(!toggleSlides)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
@@ -480,7 +474,7 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setToggleSheets(!toggleSheets)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
@@ -500,7 +494,7 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setToggleImages(!toggleImages)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
@@ -520,7 +514,7 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setTogglePDFs(!togglePDFs)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
@@ -540,7 +534,7 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => setToggleVideos(!toggleVideos)}>
                                 <View style={styles.View13}>
                                     <View style={styles.View14}>
                                         <View style={styles.View15}>
@@ -560,8 +554,6 @@ const Search = (props) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-
-
                         </View>
                     </View>
                 </Modal>
@@ -571,7 +563,6 @@ const Search = (props) => {
                     animationType="slide"
                     transparent={true}
                     visible={modalData}
-
                 >
                     <View style={styles.centeredView2}>
                         <View style={styles.modalView}>
@@ -680,11 +671,6 @@ const Search = (props) => {
                 </View>
 
             </Modal>
-
-
-
-
-
         </View>
     )
 }
@@ -694,8 +680,6 @@ export default Search;
 const styles = StyleSheet.create({
     container: {
         paddingBottom: 20,
-
-
     },
     Viewone: {
         flexDirection: 'row',
@@ -705,18 +689,18 @@ const styles = StyleSheet.create({
         backgroundColor: '#e6e6e6',
         paddingHorizontal: 16
     },
-    TextInput: {
+    Text: {
         fontSize: 20,
-        marginTop: 70,
+        marginTop: 46,
         width: 250
     },
     Image: {
         marginTop: 70,
-
     },
     Imageone: {
         marginTop: 70,
-        marginLeft: 15
+        height: 28,
+        width: 28
     },
 
     View: {
@@ -909,7 +893,7 @@ const styles = StyleSheet.create({
     View18: {
         width: '100%',
         height: 315,
-        backgroundColor: '#fff',
+        backgroundColor: '#ffffff',
         borderRadius: 5,
         alignItems: 'center',
         paddingHorizontal: 20
