@@ -48,11 +48,6 @@ const GeneralSettings = (props) => {
         setSystem(true)
     }
 
-
-
-
-
-
     return (
         <View style={styles.container}>
             <View style={styles.View1}>
@@ -88,8 +83,9 @@ const GeneralSettings = (props) => {
                 </TouchableOpacity>
                 <View style={styles.View3}>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setToggleCheckBox(!toggleCheckBox)}>
                     <View style={styles.View4}>
+
                         <Text style={styles.Text2}>Manage notification </Text>
                         <View style={styles.View5}>
                             <Text style={styles.Text3}>Group emails in the same conversation for IMAP,POP3 and Exchange accounts</Text>
@@ -134,7 +130,7 @@ const GeneralSettings = (props) => {
                 </TouchableOpacity>
                 <View style={styles.View3}>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setBox(!box)}>
                     <View style={styles.View4}>
                         <View style={styles.View6}>
                             <View>
@@ -164,7 +160,7 @@ const GeneralSettings = (props) => {
                 </TouchableOpacity>
                 <View style={styles.View3}>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setAuto(!auto)}>
                     <View style={styles.View4}>
                         <View style={styles.View6}>
                             <View>
@@ -187,7 +183,7 @@ const GeneralSettings = (props) => {
                 <View style={styles.View7}>
                     <Text style={styles.Text4}>Action Confirmations</Text>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setBeleting(!beleting)}>
                     <View style={styles.View8}>
                         <Text style={styles.Text2}>Confirm before deleting</Text>
                         <CheckBox
@@ -204,7 +200,7 @@ const GeneralSettings = (props) => {
                 </TouchableOpacity>
                 <View style={styles.View3}>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setBefore(!before)}>
                     <View style={styles.View8}>
                         <Text style={styles.Text2}>Confirm before archiving</Text>
                         <CheckBox
@@ -221,7 +217,7 @@ const GeneralSettings = (props) => {
                 </TouchableOpacity>
                 <View style={styles.View3}>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setSending(!sending)}>
                     <View style={styles.View8}>
                         <Text style={styles.Text2}>Confirm before sending</Text>
                         <CheckBox
@@ -237,12 +233,10 @@ const GeneralSettings = (props) => {
                     </View>
                 </TouchableOpacity>
             </ScrollView>
-
             <Modal
                 animationType="none"
                 transparent={true}
                 visible={modalTheme}
-
             >
                 <View style={styles.View9}>
                     <View style={styles.View10}>
@@ -298,18 +292,10 @@ const GeneralSettings = (props) => {
                     </View>
                 </View>
             </Modal>
-
-
-
-
-
-
-
             <Modal
                 animationType="none"
                 transparent={true}
                 visible={modalDefault}
-
             >
                 <View style={styles.View9}>
                     <View style={styles.View15}>
@@ -339,7 +325,6 @@ const GeneralSettings = (props) => {
                                 innerSize='14'
                                 onToggle={(than) => name(name)}
                                 labelPosition={LABEL_POSITION.RIGHT}
-
                             />
                             <Text style={styles.Text6} onPress={() => name(name)}>Delete</Text>
                         </View>
@@ -354,16 +339,10 @@ const GeneralSettings = (props) => {
                     </View>
                 </View>
             </Modal>
-
-
-
-
-
             <Modal
                 animationType="none"
                 transparent={true}
                 visible={ModalDot}
-
             >
                 <View style={styles.View17}>
                     <View style={styles.View16}>
@@ -387,7 +366,6 @@ const GeneralSettings = (props) => {
                     </View>
                 </View>
             </Modal>
-
         </View >
     )
 }

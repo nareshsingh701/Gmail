@@ -151,7 +151,6 @@ const styles = StyleSheet.create({
     marginLeft: 3,
     marginTop: 5
   },
-
   View4: {
     height: 35,
     width: 245,
@@ -200,7 +199,6 @@ const styles = StyleSheet.create({
   Textthree: {
     marginTop: 10,
     fontSize: 20,
-
   },
   Textfor: {
     marginLeft: 150,

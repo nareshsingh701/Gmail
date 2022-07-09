@@ -70,7 +70,7 @@ const NareshSingh7011111 = (props) => {
                 <View style={styles.View5}>
                 </View>
                 <View style={styles.View7}>
-                    <Text style={styles.Text3}>Chat notification</Text>
+                    <Text style={styles.Text3} onPress={() => setToggleCheckBox(!toggleCheckBox)}>Chat notification</Text>
                     <CheckBox
                         disabled={false}
                         value={toggleCheckBox}
@@ -101,10 +101,10 @@ const NareshSingh7011111 = (props) => {
                     <Text style={styles.Text2}>Generat</Text>
                 </View>
                 <View style={styles.View7}>
-                    <View>
+                    <TouchableOpacity onPress={() => setToggleCheckname(!toggleCheckname)}>
                         <Text style={styles.Text3}>Chat</Text>
                         <Text style={styles.Text4}>Show the Chat and Spaces tabs</Text>
-                    </View>
+                    </TouchableOpacity>
                     <CheckBox
                         disabled={false}
                         value={toggleCheckname}
@@ -131,70 +131,76 @@ const NareshSingh7011111 = (props) => {
                 <View style={styles.View5}>
                 </View>
                 <View style={styles.View6}>
-                    <Text style={styles.Text3}>Conversation view</Text>
-                    <View style={styles.View9}>
-                        <View style={styles.View8}>
-                            <Text style={styles.Text4}>Group emails with the same topic together. This setting may take some time to apply.</Text>
+                    <TouchableOpacity onPress={() => setToggleCheckview(!toggleCheckview)}>
+                        <Text style={styles.Text3}>Conversation view</Text>
+                        <View style={styles.View9}>
+                            <View style={styles.View8}>
+                                <Text style={styles.Text4}>Group emails with the same topic together. This setting may take some time to apply.</Text>
+                            </View>
+                            <CheckBox
+                                disabled={false}
+                                value={toggleCheckview}
+                                boxType={'square'}
+                                onCheckColor={'#fff'}
+                                onFillColor={'blue'}
+                                lineWidth={3}
+                                tintColor={'#000'}
+                                onValueChange={(newValue) => setToggleCheckview(newValue)}
+                            />
                         </View>
-                        <CheckBox
-                            disabled={false}
-                            value={toggleCheckview}
-                            boxType={'square'}
-                            onCheckColor={'#fff'}
-                            onFillColor={'blue'}
-                            lineWidth={3}
-                            tintColor={'#000'}
-                            onValueChange={(newValue) => setToggleCheckview(newValue)}
-                        />
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.View5}>
                 </View>
                 <View style={styles.View6}>
-                    <Text style={styles.Text3}>Smart features and personalisation</Text>
-                    <View style={styles.View9}>
-                        <View style={styles.View10}>
-                            <Text style={styles.Text4}>Gmail, Chat and Meet may use my email, chat and video content to personalise my experience and provide smart features. If lopt out, such features will be turned off.</Text>
+                    <TouchableOpacity onPress={() => setToggleCheckSmart(!toggleCheckSmart)}>
+                        <Text style={styles.Text3}>Smart features and personalisation</Text>
+                        <View style={styles.View9}>
+                            <View style={styles.View10}>
+                                <Text style={styles.Text4}>Gmail, Chat and Meet may use my email, chat and video content to personalise my experience and provide smart features. If lopt out, such features will be turned off.</Text>
+                            </View>
+                            <CheckBox
+                                disabled={false}
+                                value={toggleCheckSmart}
+                                boxType={'square'}
+                                onCheckColor={'#fff'}
+                                onFillColor={'blue'}
+                                lineWidth={3}
+                                tintColor={'#000'}
+                                onValueChange={(newValue) => setToggleCheckSmart(newValue)}
+                            />
                         </View>
-                        <CheckBox
-                            disabled={false}
-                            value={toggleCheckSmart}
-                            boxType={'square'}
-                            onCheckColor={'#fff'}
-                            onFillColor={'blue'}
-                            lineWidth={3}
-                            tintColor={'#000'}
-                            onValueChange={(newValue) => setToggleCheckSmart(newValue)}
-                        />
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.View5}>
                 </View>
                 <View style={styles.View6}>
-                    <Text style={styles.Text3}>Smart features and personalisation in other Google products</Text>
-                    <View style={styles.View9}>
-                        <View style={styles.View10}>
-                            <Text style={styles.Text4}>Gmail, Chat and Meet may use my email, chat and video content to personalise my experience and provide smart features. If lopt out, such features will be turned off.</Text>
+                    <TouchableOpacity onPress={() => setGoogle(!google)}>
+                        <Text style={styles.Text3}>Smart features and personalisation in other Google products</Text>
+                        <View style={styles.View9}>
+                            <View style={styles.View10}>
+                                <Text style={styles.Text4}>Gmail, Chat and Meet may use my email, chat and video content to personalise my experience and provide smart features. If lopt out, such features will be turned off.</Text>
+                            </View>
+                            <CheckBox
+                                disabled={false}
+                                value={google}
+                                boxType={'square'}
+                                onCheckColor={'#fff'}
+                                onFillColor={'blue'}
+                                lineWidth={3}
+                                tintColor={'#000'}
+                                onValueChange={(newValue) => setGoogle(newValue)}
+                            />
                         </View>
-                        <CheckBox
-                            disabled={false}
-                            value={google}
-                            boxType={'square'}
-                            onCheckColor={'#fff'}
-                            onFillColor={'blue'}
-                            lineWidth={3}
-                            tintColor={'#000'}
-                            onValueChange={(newValue) => setGoogle(newValue)}
-                        />
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.View5}>
                 </View>
                 <View style={styles.View7}>
-                    <View>
+                    <TouchableOpacity onPress={() => setEmail(!email)}>
                         <Text style={styles.Text3}>Smart Compose in email</Text>
                         <Text style={styles.Text4}>Show predictive writing suggestions</Text>
-                    </View>
+                    </TouchableOpacity>
                     <CheckBox
                         disabled={false}
                         value={email}
@@ -209,10 +215,10 @@ const NareshSingh7011111 = (props) => {
                 <View style={styles.View5}>
                 </View>
                 <View style={styles.View7}>
-                    <View>
+                    <TouchableOpacity onPress={() => setReply(!reply)}>
                         <Text style={styles.Text3}>Smart Reply in email</Text>
                         <Text style={styles.Text4}>Show suggested replies when available</Text>
-                    </View>
+                    </TouchableOpacity>
                     <CheckBox
                         disabled={false}
                         value={reply}
@@ -227,10 +233,10 @@ const NareshSingh7011111 = (props) => {
                 <View style={styles.View5}>
                 </View>
                 <View style={styles.View7}>
-                    <View>
+                    <TouchableOpacity onPress={() => setChat(!chat)}>
                         <Text style={styles.Text3}>Smart Reply in Chat</Text>
                         <Text style={styles.Text4}>Show suggested replies when available</Text>
-                    </View>
+                    </TouchableOpacity>
                     <CheckBox
                         disabled={false}
                         value={chat}
@@ -262,7 +268,9 @@ const NareshSingh7011111 = (props) => {
                     <Text style={styles.Text2}>Meet</Text>
                 </View>
                 <View style={styles.View7}>
-                    <Text style={styles.Text3}>Show the Meet tab for video calling</Text>
+                    <TouchableOpacity onPress={() => setMeet(!meet)}>
+                        <Text style={styles.Text3}>Show the Meet tab for video calling</Text>
+                    </TouchableOpacity>
                     <CheckBox
                         disabled={false}
                         value={meet}
@@ -277,10 +285,10 @@ const NareshSingh7011111 = (props) => {
                 <View style={styles.View5}>
                 </View>
                 <View style={styles.View7}>
-                    <View>
+                    <TouchableOpacity onPress={() => setRinging(!ringing)}>
                         <Text style={styles.Text3}>Call ringing</Text>
                         <Text style={styles.Text4}>Ring for incoming calls</Text>
-                    </View>
+                    </TouchableOpacity>
                     <CheckBox
                         disabled={false}
                         value={ringing}
@@ -308,7 +316,9 @@ const NareshSingh7011111 = (props) => {
                     <Text style={styles.Text2}>Data usage</Text>
                 </View>
                 <View style={styles.View7}>
-                    <Text style={styles.Text3}>Sync Gmail</Text>
+                    <TouchableOpacity onPress={() => setUsage(!usage)}>
+                        <Text style={styles.Text3}>Sync Gmail</Text>
+                    </TouchableOpacity>
                     <CheckBox
                         disabled={false}
                         value={usage}
@@ -329,22 +339,24 @@ const NareshSingh7011111 = (props) => {
                 <View style={styles.View5}>
                 </View>
                 <View style={styles.View6}>
-                    <Text style={styles.Text3}>Download attachments</Text>
-                    <View style={styles.View9}>
-                        <View style={styles.View8}>
-                            <Text style={styles.Text4}>Auto- download attachments to recent messages via WiFi</Text>
+                    <TouchableOpacity onPress={() => setMessages(!messages)}>
+                        <Text style={styles.Text3}>Download attachments</Text>
+                        <View style={styles.View9}>
+                            <View style={styles.View8}>
+                                <Text style={styles.Text4}>Auto- download attachments to recent messages via WiFi</Text>
+                            </View>
+                            <CheckBox
+                                disabled={false}
+                                value={messages}
+                                boxType={'square'}
+                                onCheckColor={'#fff'}
+                                onFillColor={'blue'}
+                                lineWidth={3}
+                                tintColor={'#000'}
+                                onValueChange={(newValue) => setMessages(newValue)}
+                            />
                         </View>
-                        <CheckBox
-                            disabled={false}
-                            value={messages}
-                            boxType={'square'}
-                            onCheckColor={'#fff'}
-                            onFillColor={'blue'}
-                            lineWidth={3}
-                            tintColor={'#000'}
-                            onValueChange={(newValue) => setMessages(newValue)}
-                        />
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.View5}>
                 </View>
@@ -355,22 +367,24 @@ const NareshSingh7011111 = (props) => {
                 <View style={styles.View5}>
                 </View>
                 <View style={styles.View6}>
-                    <Text style={styles.Text3}>Enable dynamic email</Text>
-                    <View style={styles.View11}>
-                        <View style={styles.View8}>
-                            <Text style={styles.Text4} >Display dynamic email content when available</Text>
+                    <TouchableOpacity onPress={() => setWhen(!when)}>
+                        <Text style={styles.Text3}>Enable dynamic email</Text>
+                        <View style={styles.View11}>
+                            <View style={styles.View8}>
+                                <Text style={styles.Text4} >Display dynamic email content when available</Text>
+                            </View>
+                            <CheckBox
+                                disabled={false}
+                                value={when}
+                                boxType={'square'}
+                                onCheckColor={'#fff'}
+                                onFillColor={'blue'}
+                                lineWidth={3}
+                                tintColor={'#000'}
+                                onValueChange={(newValue) => setWhen(newValue)}
+                            />
                         </View>
-                        <CheckBox
-                            disabled={false}
-                            value={when}
-                            boxType={'square'}
-                            onCheckColor={'#fff'}
-                            onFillColor={'blue'}
-                            lineWidth={3}
-                            tintColor={'#000'}
-                            onValueChange={(newValue) => setWhen(newValue)}
-                        />
-                    </View>
+                    </TouchableOpacity>
                 </View>
 
             </ScrollView>

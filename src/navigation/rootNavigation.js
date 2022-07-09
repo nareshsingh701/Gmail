@@ -99,7 +99,6 @@ function TabApp() {
                             }}
                         >{tabTitle}</Text>
                     );
-
                 },
                 tabBarIcon: (tabProps) => {
                     const { color, size, focused } = tabProps;
@@ -159,16 +158,12 @@ const DrawerRoute = () => {
 
         </Drawer.Navigator>
     );
-
 }
-
 
 const NavigationComponent = () => {
     return (
-
         <NavigationContainer>
             <Stack.Navigator initialRouteName='myPager'>
-
 
                 <Stack.Screen options={{ headerShown: false }} name="home" component={DrawerRoute} />
                 <Stack.Screen options={{ headerShown: false }} name="search" component={Search} />
@@ -197,12 +192,8 @@ const NavigationComponent = () => {
                 <Stack.Screen options={{ headerShown: false }} name="OnOff" component={OnOff} />
                 <Stack.Screen options={{ headerShown: false }} name="reply" component={Reply} />
 
-
-
-
             </Stack.Navigator>
         </NavigationContainer>
     );
 }
-
 export default NavigationComponent;

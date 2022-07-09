@@ -29,7 +29,7 @@ const Google = (props) => {
                         </View>
                     </View>
                 </View>
-                <View style={styles.View6}>
+                <TouchableOpacity style={styles.View6} onPress={() => setToggleCheckBox(!toggleCheckBox)}>
                     <View style={styles.View5}>
                         <Text style={styles.Text4}>Calender</Text>
                         <CheckBox
@@ -46,8 +46,8 @@ const Google = (props) => {
                     <View>
                         <Text style={styles.Text3} >Last synced 29 June 2022, 8:23 am</Text>
                     </View>
-                </View>
-                <View style={styles.View6}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.View6} onPress={() => setToggleCheck(!toggleCheck)}>
                     <View style={styles.View5}>
                         <Text style={styles.Text4}>Contacts</Text>
                         <CheckBox
@@ -64,8 +64,8 @@ const Google = (props) => {
                     <View>
                         <Text style={styles.Text3} >Last synced 28 June 2022, 4:16 pm</Text>
                     </View>
-                </View>
-                <View style={styles.View6}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.View6} onPress={() => setTogglename(!togglename)}>
                     <View style={styles.View5}>
                         <Text style={styles.Text4}>Drive</Text>
                         <CheckBox
@@ -82,8 +82,8 @@ const Google = (props) => {
                     <View>
                         <Text style={styles.Text3} >Last synced 24 June 2022, 5:34 am</Text>
                     </View>
-                </View>
-                <View style={styles.View6}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.View6} onPress={() => setToggleCheckname(!toggleCheckname)}>
                     <View style={styles.View5}>
                         <Text style={styles.Text4}>Gmail</Text>
                         <CheckBox
@@ -100,7 +100,7 @@ const Google = (props) => {
                     <View>
                         <Text style={styles.Text3} >Last synced 28 June 2022, 4:18 pm</Text>
                     </View>
-                </View>
+                </TouchableOpacity>
             </ScrollView>
             <View style={styles.View7}>
                 <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/more.png')} />
