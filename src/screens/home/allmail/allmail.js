@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     height: 100,
     width: 370,
     borderRadius: 15,
-    marginLeft: 10,
+
     marginTop: 20
   },
   Viewthree: {
