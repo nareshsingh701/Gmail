@@ -160,12 +160,12 @@ const Reply = (props) => {
                         </TouchableOpacity>
                         <View style={styles.View19} />
                         <View style={styles.View20}>
-                            <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/doun.png')} />
-                            <Text style={{ fontSize: 17 }}>Copy</Text>
+                            <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/copy.png')} />
+                            <Text style={{ fontSize: 17, marginLeft: 15 }}>Copy</Text>
                         </View>
                         <View style={styles.View5} />
                         <View style={styles.View20}>
-                            <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/set.png')} />
+                            <Image resizeMode={'cover'} style={styles.Image10} source={require('../../assets/images/set.png')} />
                             <Text style={{ fontSize: 18, marginLeft: 15 }}>Remove</Text>
                         </View>
                     </View>
@@ -362,5 +362,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         paddingHorizontal: 16,
         marginTop: 15
+    },
+    Image9: {
+        width: 25,
+        height: 25
     }
 })

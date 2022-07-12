@@ -52,8 +52,9 @@ const Hometo = (props) => {
                             <Image resizeMode={'cover'} style={styles.Image6} source={require('../../assets/images/givn.png')} />
                         </TouchableOpacity>
                     </View>
-                    <View>
+                    <View style={styles.View19}>
                         <Text style={styles.Text4}>to me</Text>
+                        <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/chevrondown.png')} />
                     </View>
                 </View>
             </View>
@@ -155,10 +156,6 @@ const Hometo = (props) => {
                     </View>
                 </View>
             </Modal>
-
-
-
-
         </View>
     )
 }
@@ -309,5 +306,14 @@ const styles = StyleSheet.create({
         marginLeft: 90,
         marginTop: 40
 
+    },
+    View19: {
+        flexDirection: 'row'
+    },
+    Image7: {
+        width: 10,
+        height: 15,
+        marginLeft: 10,
+        marginTop: 3
     }
 })

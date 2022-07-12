@@ -1,21 +1,21 @@
 import 'react-native-gesture-handler';
 import React from 'react'
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import { StyleSheet, Text, View } from 'react-native'
 import NavigationComponent from './src/navigation/rootNavigation';
-
-
+import Singh from './src/naresh/singh';
+import { store } from './src/store/store';
 //Custom Imports
-//import store from './src/redux/store';
-// import NavigationComponent from './src/gmail'
+
+
 
 const App = () => {
   return (
     <View style={styles.container}>
-      {/* <Provider store={store}> */}
-      <NavigationComponent />
-
-      {/* </Provider> */}
+      <Provider store={store}>
+        <Singh />
+        {/* <NavigationComponent /> */}
+      </Provider>
     </View>
   )
 }

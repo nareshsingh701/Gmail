@@ -21,7 +21,7 @@ const Allmail = () => {
           <View style={styles.Viewthree}>
             <Image resizeMode={'cover'} style={styles.Image2} source={item.icon} />
             <View style={styles.Viewfor} >
-              <View style={styles.View5}>
+              <View style={styles.View8}>
                 <Text style={styles.Textthree}>{item.title}</Text>
                 <Text style={styles.Textfor}>{item.date}</Text>
               </View>
@@ -84,8 +84,10 @@ const Allmail = () => {
       </ScrollView>
       <View style={styles.View5}>
         <Text style={styles.Text2}>All mait</Text>
-        <Image resizeMode={'cover'} style={styles.Image4} source={require('../../../assets/images/hide.png')} />
-        <Text style={styles.Text2}>Hide filters</Text>
+        <View style={{ flexDirection: 'row' }}>
+          <Image resizeMode={'cover'} style={styles.Image4} source={require('../../../assets/images/hide.png')} />
+          <Text style={styles.Text2}>Hide filters</Text>
+        </View>
       </View>
       <FlatList
         data={data}
@@ -100,6 +102,7 @@ export default Allmail
 
 const styles = StyleSheet.create({
   container: {
+    paddingHorizontal: 16
   },
   View: {
     flexDirection: 'row'
@@ -120,7 +123,7 @@ const styles = StyleSheet.create({
     marginLeft: 10
   },
   Image1: {
-    marginLeft: 15,
+    marginLeft: 10,
     marginTop: 5
   },
   View2: {
@@ -161,24 +164,22 @@ const styles = StyleSheet.create({
     marginLeft: 15
   },
   View5: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   Text2: {
     marginTop: 20,
-    marginLeft: 15,
     fontSize: 15
   },
   Image4: {
     width: 30,
     height: 30,
     marginTop: 15,
-    marginLeft: 150
   },
   ViewTwo: {
     height: 100,
     width: 370,
     borderRadius: 15,
-
     marginTop: 20
   },
   Viewthree: {
@@ -187,21 +188,20 @@ const styles = StyleSheet.create({
   Image2: {
     height: 75,
     width: 75,
-    marginLeft: 10
+    marginTop: 7
   },
   Viewfor: {
     height: 90,
-    width: 280,
   },
-  View5: {
-    flexDirection: 'row'
+  View8: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   Textthree: {
     marginTop: 10,
     fontSize: 20,
   },
   Textfor: {
-    marginLeft: 150,
     marginTop: 15,
   },
   Text5: {
@@ -211,9 +211,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   Text6: {
-    marginTop: 8
+    marginTop: 4
   },
   Image3: {
-    marginLeft: 8
+    marginLeft: 8,
+    width: 20,
+    height: 20,
+    marginTop: 3
   },
 }) 

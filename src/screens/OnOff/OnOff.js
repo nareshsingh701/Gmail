@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Icon } from 'react-native'
+import { StyleSheet, Text, View, Icon, } from 'react-native'
 // import CheckBox from '@react-native-community/checkbox';
 import CircleCheckBox, { LABEL_POSITION } from 'react-native-circle-checkbox';
 import React, { useState } from 'react'

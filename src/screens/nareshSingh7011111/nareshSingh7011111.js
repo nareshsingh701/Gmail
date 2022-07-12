@@ -1,8 +1,10 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, Modal } from 'react-native'
 import CheckBox from '@react-native-community/checkbox';
 import React, { useState } from 'react'
 
 const NareshSingh7011111 = (props) => {
+
+    const [ModalDot, setModalDot] = useState(false);
 
     const [toggleCheckBox, setToggleCheckBox] = useState(false)
     const [toggleCheckname, setToggleCheckname] = useState(false)
@@ -27,7 +29,9 @@ const NareshSingh7011111 = (props) => {
                     <Image resizeMode={'cover'} style={styles.Image} source={require('../../assets/images/back.png')} />
                 </TouchableOpacity>
                 <Text style={styles.Text1}>nareshsingh7011111@gmail</Text>
-                <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/givn.png')} />
+                <TouchableOpacity onPress={() => setModalDot(true)}>
+                    <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/givn.png')} />
+                </TouchableOpacity>
             </View>
             <ScrollView>
                 <View style={styles.View2}>
@@ -386,8 +390,30 @@ const NareshSingh7011111 = (props) => {
                         </View>
                     </TouchableOpacity>
                 </View>
-
             </ScrollView>
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={ModalDot}
+
+            >
+                <View style={styles.View17}>
+                    <View style={styles.View16}>
+                        <TouchableOpacity
+                            style={[styles.croos, styles.buttonClose]}
+                            onPress={() => setModalDot(!ModalDot)}
+                        >
+                            <View style={styles.View3}>
+                                <Text style={styles.Text3}>Manage Accounts </Text>
+                            </View>
+                        </TouchableOpacity>
+                        <View style={styles.View3}>
+                            <Text style={styles.Text3}>Help and feedback </Text>
+                        </View>
+
+                    </View>
+                </View>
+            </Modal>
         </View>
     )
 }
@@ -477,6 +503,16 @@ const styles = StyleSheet.create({
         width: 25,
         height: 25,
         marginTop: 16
+    },
+    View16: {
+        width: 200,
+        height: 120,
+        backgroundColor: '#e6e6e6',
+        marginTop: 40,
+        borderRadius: 5
+    },
+    View17: {
+        alignSelf: 'flex-end'
     },
     Image4: {
         width: 25,
