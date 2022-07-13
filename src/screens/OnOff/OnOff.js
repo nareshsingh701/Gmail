@@ -1,30 +1,25 @@
-import { StyleSheet, Text, View, Icon, } from 'react-native'
-// import CheckBox from '@react-native-community/checkbox';
-import CircleCheckBox, { LABEL_POSITION } from 'react-native-circle-checkbox';
+import { StyleSheet, Text, View, Icon, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { subtraction, addition } from '../../action/counterAction';
 
 const OnOff = () => {
-    // const [toggleCheckBox, setToggleCheckBox] = useState(false)
-    const [data, setData] = useState(false)
+
+    const { counter } = useSelector((state) => state.counter);
+    const dispatch = useDispatch();
+
     return (
+
         <View style={styles.container}>
-            {/* <CheckBox
-                disabled={false}
-                boxType={'square'}
-                value={toggleCheckBox}
-                onValueChange={(newValue) => setToggleCheckBox(newValue)}
-            /> */}
+            <TouchableOpacity style={styles.View1} onPress={() => dispatch(addition())} >
+                <Text style={styles.Text1}>+</Text>
+            </TouchableOpacity>
 
-            <CircleCheckBox
-                checked={data}
-                innerColor='#0000ff'
-                outerColor='#0000ff'
-                filterSize='22'
-                innerSize='14'
-                onToggle={(data) => setData(data)}
-                labelPosition={LABEL_POSITION.RIGHT}
-            />
+            <Text style={styles.Text2}>{counter}</Text>
 
+            <TouchableOpacity style={styles.View2} onPress={() => dispatch(subtraction())} >
+                <Text style={styles.Text1}>-</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -34,7 +29,38 @@ export default OnOff
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        paddingHorizontal: 20,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        justifyContent: 'space-evenly',
+        flexDirection: 'row'
+    },
+    Text1: {
+        fontSize: 50,
+        fontWeight: 'bold'
+    },
+    View1: {
+        width: 120,
+        // height: 50,
+        backgroundColor: '#00ff00',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20
+    },
+    View2: {
+        width: 120,
+        // height: 50,
+        backgroundColor: '#9900cc',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
+
+    },
+
+    Text2: {
+        fontSize: 30,
+        color: 'blue',
+        fontWeight: '800',
+
     }
 })

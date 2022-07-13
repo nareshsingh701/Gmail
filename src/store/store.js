@@ -1,4 +1,18 @@
-import { createStore } from 'redux'
-import { mainReducer } from './reducers';
+import thunk from 'redux-thunk';
+import { createLogger } from 'redux-logger';
+import { createStore, applyMiddleware, compose } from 'redux';
 
-export const store = createStore(mainReducer)
+import rootReducer from "../reducers/index";
+
+const enhancer = compose(
+    applyMiddleware(
+        thunk,
+        createLogger({
+            predicate: () => __DEV__,
+        }),
+    )
+);
+
+
+const store = createStore(rootReducer, {}, enhancer);
+export default store

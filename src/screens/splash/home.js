@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, FlatList
 
 const Home = (props,) => {
 
+
   const [modalVisible, setModalVisible] = useState(false);
 
   const data = [

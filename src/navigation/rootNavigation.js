@@ -163,7 +163,7 @@ const DrawerRoute = () => {
 const NavigationComponent = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName='myPager'>
+            <Stack.Navigator initialRouteName='OnOff'>
 
                 <Stack.Screen options={{ headerShown: false }} name="home" component={DrawerRoute} />
                 <Stack.Screen options={{ headerShown: false }} name="search" component={Search} />

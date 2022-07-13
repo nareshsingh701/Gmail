@@ -1,8 +1,8 @@
-import { ADDITION, SUBTRACTION } from "./actionType";
+import { ADDITION, SUBTRACTION } from "../actionType";
 
 
 export const addition = () => ({
-    type: ADDITION
+    type: ADDITION,
 })
 
 export const subtraction = () => ({

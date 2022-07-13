@@ -1,12 +1,11 @@
-import { StyleSheet, Text, View, Button, Touchable } from 'react-native'
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { addition, subtraction } from '../store/action';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Value } from 'react-native-reanimated';
+import { useSelector, useDispatch } from 'react-redux';
+import { subtraction, addition } from '../action/counterAction';
+
 
 const Singh = (props) => {
-    const data = useSelector((state) => state.counter);
+    const { counter } = useSelector((state) => state.counter);
     const dispatch = useDispatch();
     return (
         <View style={styles.container}>
@@ -14,7 +13,7 @@ const Singh = (props) => {
                 <Text style={styles.Text1}>Add</Text>
             </TouchableOpacity>
 
-            <Text style={styles.Text2}>{data}</Text>
+            <Text style={styles.Text2}>{counter}</Text>
 
             <TouchableOpacity style={styles.View2} onPress={() => dispatch(subtraction())} >
                 <Text style={styles.Text1}>subtract</Text>
@@ -26,13 +25,15 @@ const Singh = (props) => {
 export default Singh
 
 const styles = StyleSheet.create({
+
     container: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
     },
     Text1: {
-        fontSize: 25
+        fontSize: 25,
+        fontWeight: 'bold'
     },
     View1: {
         width: 120,
@@ -48,11 +49,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#9900cc',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 20
+        borderRadius: 20,
+        marginTop: 20
     },
+
     Text2: {
         fontSize: 30,
-        color: '#ff33ff',
-        fontWeight: '800'
+        color: 'blue',
+        fontWeight: '800',
+        marginTop: 20
     }
 })
