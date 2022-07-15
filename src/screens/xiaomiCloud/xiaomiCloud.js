@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, Switch } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, Switch, Modal, Pressable } from 'react-native'
 import React, { useState } from 'react'
 
 const XiaomiCloud = (props) => {
@@ -7,13 +7,15 @@ const XiaomiCloud = (props) => {
     const [naresh, setnaresh] = useState(false);
     const [phrases, setphrases] = useState(false);
     const [name, setname] = useState(false);
+    const [Cloud, setCloud] = useState(false);
+
     return (
         <View style={styles.container}>
             <View style={styles.View1}>
                 <TouchableOpacity onPress={() => props.navigation.navigate('account')}>
                     <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/back.png')} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setCloud(true)}>
                     <Image resizeMode={'cover'} style={styles.Image1} source={require('../../assets/images/givn.png')} />
                 </TouchableOpacity>
             </View>
@@ -291,6 +293,23 @@ const XiaomiCloud = (props) => {
                 </TouchableOpacity>
 
             </ScrollView >
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={Cloud}
+            >
+                <Pressable style={{ flex: 1, paddingHorizontal: 20, alignItems: 'flex-end' }} onPress={() => setCloud(false)}>
+                    <View style={styles.View22}>
+                        <Text style={{ fontSize: 18, marginTop: 16, color: "#000" }}>Terms and conditions</Text>
+                        <Text style={{ fontSize: 18, marginTop: 30, color: "#000" }}>Help and feedback</Text>
+                        <TouchableOpacity
+                            style={[styles.croos, styles.buttonClose]}
+                            onPress={() => setCloud(!Cloud)}
+                        >
+                        </TouchableOpacity>
+                    </View>
+                </Pressable>
+            </Modal>
         </View >
     )
 }
@@ -304,7 +323,7 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     View1: {
-        marginTop: 35,
+        marginTop: 45,
         flexDirection: 'row',
         justifyContent: 'space-between',
         height: 50
@@ -470,5 +489,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginTop: 5
+    },
+    View22: {
+        width: 210,
+        height: 120,
+        backgroundColor: '#fff',
+        marginTop: 40,
+        borderRadius: 10,
+        paddingHorizontal: 18
     }
 })

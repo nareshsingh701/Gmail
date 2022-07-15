@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Image, ScrollView, TouchableOpacity, Modal, } from 'react-native'
+import { StyleSheet, Text, View, TextInput, Image, ScrollView, TouchableOpacity, Modal, Pressable } from 'react-native'
 import CheckBox from '@react-native-community/checkbox';
 import CircleCheckBox, { LABEL_POSITION } from 'react-native-circle-checkbox';
 import React, { useState } from 'react'
@@ -558,93 +558,95 @@ const Search = (props) => {
                     </View>
                 </Modal>
             </View>
-            <View style={styles.centeredView}>
-                <Modal
-                    animationType="slide"
-                    transparent={true}
-                    visible={modalData}
-                >
-                    <View style={styles.centeredView2}>
-                        <View style={styles.modalView}>
-                            <View style={styles.View5}>
-                                <TouchableOpacity
-                                    style={[styles.croos, styles.buttonClose]}
-                                    onPress={() => setModalData(!modalData)}
-                                >
-                                    <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/croos.png')} />
-                                </TouchableOpacity>
-                                <Text style={styles.modalText}>Data</Text>
-                            </View>
-                            <View style={styles.View7}>
-                            </View>
-                            <View style={styles.View16}>
-                                <CircleCheckBox
-                                    checked={data}
-                                    innerColor='#0000ff'
-                                    outerColor='#0000ff'
-                                    filterSize='22'
-                                    innerSize='14'
-                                    onToggle={(data) => One(One)}
-                                    labelPosition={LABEL_POSITION.RIGHT}
-                                />
-                                <Text style={styles.Text5} onPress={() => One(One)}>Any time</Text>
-                            </View>
-                            <View style={styles.View16}>
-                                <CircleCheckBox
-                                    checked={than}
-                                    innerColor='#0000ff'
-                                    outerColor='#0000ff'
-                                    filterSize='22'
-                                    innerSize='14'
-                                    onToggle={(than) => name(name)}
-                                    labelPosition={LABEL_POSITION.RIGHT}
 
-                                />
-                                <Text style={styles.Text5} onPress={() => name(name)}>Older than a week</Text>
-                            </View>
-                            <View style={styles.View16}>
-                                <CircleCheckBox
-                                    checked={older}
-                                    innerColor='#0000ff'
-                                    outerColor='#0000ff'
-                                    filterSize='22'
-                                    innerSize='14'
-                                    onToggle={(older) => From(From)}
-                                    labelPosition={LABEL_POSITION.RIGHT}
-                                />
-                                <Text style={styles.Text5} onPress={() => From(From)}>Older than a month</Text>
-                            </View>
-                            <View style={styles.View16}>
-                                <CircleCheckBox
-                                    checked={months}
-                                    innerColor='#0000ff'
-                                    outerColor='#0000ff'
-                                    filterSize='22'
-                                    innerSize='14'
-                                    onToggle={(months) => Custom(Custom)}
-                                    labelPosition={LABEL_POSITION.RIGHT}
-                                />
-                                <Text style={styles.Text5} onPress={() => Custom(Custom)}>Older than 6 months</Text>
-                            </View>
-                            <View style={styles.View16}>
-                                <CircleCheckBox
-                                    checked={year}
-                                    innerColor='#0000ff'
-                                    outerColor='#0000ff'
-                                    filterSize='22'
-                                    innerSize='14'
-                                    onToggle={(year) => Renge(Renge)}
-                                    labelPosition={LABEL_POSITION.RIGHT}
-                                />
-                                <Text style={styles.Text5} onPress={() => Renge(Renge)}>Older than a year</Text>
-                            </View>
-                            <View style={styles.View17}>
-                                <Text style={styles.Text6}>Custom renge</Text>
-                            </View>
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalData}
+            >
+                <Pressable s={{ flex: 1, }} onPress={() => setModalData(!modalData)}>
+
+                    <View style={styles.modalView}>
+                        <View style={styles.View5}>
+                            <TouchableOpacity
+                                style={[styles.croos, styles.buttonClose]}
+                                onPress={() => setModalData(!modalData)}
+                            >
+                                <Image resizeMode={'cover'} style={styles.Image2} source={require('../../assets/images/croos.png')} />
+                            </TouchableOpacity>
+                            <Text style={styles.modalText}>Data</Text>
+                        </View>
+                        <View style={styles.View7}>
+                        </View>
+                        <View style={styles.View16}>
+                            <CircleCheckBox
+                                checked={data}
+                                innerColor='#0000ff'
+                                outerColor='#0000ff'
+                                filterSize='22'
+                                innerSize='14'
+                                onToggle={(data) => One(One)}
+                                labelPosition={LABEL_POSITION.RIGHT}
+                            />
+                            <Text style={styles.Text5} onPress={() => One(One)}>Any time</Text>
+                        </View>
+                        <View style={styles.View16}>
+                            <CircleCheckBox
+                                checked={than}
+                                innerColor='#0000ff'
+                                outerColor='#0000ff'
+                                filterSize='22'
+                                innerSize='14'
+                                onToggle={(than) => name(name)}
+                                labelPosition={LABEL_POSITION.RIGHT}
+
+                            />
+                            <Text style={styles.Text5} onPress={() => name(name)}>Older than a week</Text>
+                        </View>
+                        <View style={styles.View16}>
+                            <CircleCheckBox
+                                checked={older}
+                                innerColor='#0000ff'
+                                outerColor='#0000ff'
+                                filterSize='22'
+                                innerSize='14'
+                                onToggle={(older) => From(From)}
+                                labelPosition={LABEL_POSITION.RIGHT}
+                            />
+                            <Text style={styles.Text5} onPress={() => From(From)}>Older than a month</Text>
+                        </View>
+                        <View style={styles.View16}>
+                            <CircleCheckBox
+                                checked={months}
+                                innerColor='#0000ff'
+                                outerColor='#0000ff'
+                                filterSize='22'
+                                innerSize='14'
+                                onToggle={(months) => Custom(Custom)}
+                                labelPosition={LABEL_POSITION.RIGHT}
+                            />
+                            <Text style={styles.Text5} onPress={() => Custom(Custom)}>Older than 6 months</Text>
+                        </View>
+                        <View style={styles.View16}>
+                            <CircleCheckBox
+                                checked={year}
+                                innerColor='#0000ff'
+                                outerColor='#0000ff'
+                                filterSize='22'
+                                innerSize='14'
+                                onToggle={(year) => Renge(Renge)}
+                                labelPosition={LABEL_POSITION.RIGHT}
+                            />
+                            <Text style={styles.Text5} onPress={() => Renge(Renge)}>Older than a year</Text>
+                        </View>
+                        <View style={styles.View17}>
+                            <Text style={styles.Text6}>Custom renge</Text>
                         </View>
                     </View>
-                </Modal>
-            </View>
+
+                </Pressable>
+            </Modal>
+
 
 
 
@@ -653,7 +655,8 @@ const Search = (props) => {
                 transparent={true}
                 visible={Name}
             >
-                <View style={styles.View19}>
+                <Pressable onPress={() => setName(!Name)} style={{ flex: 1, paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center' }}>
+
                     <View style={styles.View18}>
                         <Text style={styles.Text7}>Google</Text>
                         <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/roud.jpg')} />
@@ -668,7 +671,8 @@ const Search = (props) => {
                         </View>
                         <Text style={styles.Text10}>English</Text>
                     </View>
-                </View>
+
+                </Pressable>
 
             </Modal>
         </View>
@@ -759,18 +763,6 @@ const styles = StyleSheet.create({
         marginLeft: 15
     },
 
-
-
-
-
-    centeredView: {
-        flex: 1,
-        marginTop: 50
-    },
-    centeredView2: {
-        flex: 1,
-        marginTop: 290
-    },
     centeredView1: {
         flex: 1,
         marginTop: 200
@@ -779,6 +771,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         height: '100%',
         width: '100%',
+        marginTop: 350
     },
     Image2: {
         height: 30,
@@ -898,12 +891,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 20
     },
-    View19: {
-        flex: 1,
-        paddingHorizontal: 10,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
+
     Text7: {
         fontSize: 30,
         fontWeight: '500',

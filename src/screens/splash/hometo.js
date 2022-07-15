@@ -1,10 +1,17 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, Modal } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, Modal, Pressable } from 'react-native'
 import React, { useState } from 'react'
+import CheckBox from '@react-native-community/checkbox';
+
 
 const Hometo = (props) => {
+
     const [ModalDot, setModalDot] = useState(false);
     const [ModalThreeDot, setModalThreeDot] = useState(false);
     const [Delete, setDelete] = useState(false);
+    const [Inbox, setInbox] = useState(false);
+    const [toggleCheckBox, setToggleCheckBox] = useState(false)
+    const [Snooze, setSnooze] = useState(false)
+
     return (
         <View style={styles.container}>
             <View style={styles.View1}>
@@ -30,9 +37,9 @@ const Hometo = (props) => {
                 <View style={styles.View4}>
                     <View style={styles.View5}>
                         <Text style={styles.Text2}>New work </Text>
-                        <View style={styles.View6}>
+                        <TouchableOpacity style={styles.View6} onPress={() => setInbox(true)}>
                             <Text style={styles.Text1}>Inbox</Text>
-                        </View>
+                        </TouchableOpacity>
                     </View>
                     <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/cd.png')} />
                 </View>
@@ -58,39 +65,58 @@ const Hometo = (props) => {
                     </View>
                 </View>
             </View>
-
+            <View style={styles.View24}>
+                <TouchableOpacity style={styles.View25} onPress={() => props.navigation.navigate('reply')}>
+                    <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/upleft.png')} />
+                    <Text style={styles.Text11}>Reply</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.View25} onPress={() => props.navigation.navigate('reply')}>
+                    <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/upleft.png')} />
+                    <Text style={styles.Text11}>Reply all</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.View25} onPress={() => props.navigation.navigate('reply')}>
+                    <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/upright.png')} />
+                    <Text style={styles.Text11}>Forward</Text>
+                </TouchableOpacity>
+            </View>
             <Modal
                 animationType="none"
                 transparent={true}
                 visible={ModalDot}
             >
-                <View style={styles.View11}>
-                    <View style={styles.View12}>
-                        <TouchableOpacity
-                            style={[styles.croos, styles.buttonClose]}
-                            onPress={() => setModalDot(!ModalDot)}
-                        >
-                            <View style={styles.View13}>
+                <Pressable onPress={() => setModalDot(!ModalDot)}>
+                    <View style={styles.View11}>
+                        <View style={styles.View12}>
+                            <TouchableOpacity style={styles.View13} onPress={() => {
+                                setModalDot(false)
+                                props.navigation.navigate('reply')
+                            }}>
                                 <Text style={styles.Text6}>Reply all </Text>
+                            </TouchableOpacity>
+                            <View style={styles.View13}>
+                                <Text style={styles.Text6}>Forward </Text>
                             </View>
-                        </TouchableOpacity>
-                        <View style={styles.View13}>
-                            <Text style={styles.Text6}>Forward </Text>
-                        </View>
-                        <View style={styles.View13}>
-                            <Text style={styles.Text6}>Add star </Text>
-                        </View>
-                        <View style={styles.View13}>
-                            <Text style={styles.Text6}>Print </Text>
-                        </View>
-                        <View style={styles.View13}>
-                            <Text style={styles.Text6}>Mark unread from here </Text>
-                        </View>
-                        <View style={styles.View13}>
-                            <Text style={styles.Text6}>Block"Google New" </Text>
+                            <View style={styles.View13}>
+                                <Text style={styles.Text6}>Add star </Text>
+                            </View>
+                            <View style={styles.View13}>
+                                <Text style={styles.Text6}>Print </Text>
+                            </View>
+                            <TouchableOpacity style={styles.View13} onPress={() => props.navigation.navigate('home')
+                            }>
+                                <Text style={styles.Text6}>Mark unread from here </Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={[styles.croos, styles.buttonClose]}
+                                onPress={() => setModalDot(!ModalDot)}
+                            >
+                                <View style={styles.View13}>
+                                    <Text style={styles.Text6}>Block"Google New" </Text>
+                                </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
-                </View>
+                </Pressable>
             </Modal>
 
             <Modal
@@ -98,7 +124,8 @@ const Hometo = (props) => {
                 transparent={true}
                 visible={ModalThreeDot}
             >
-                <View style={styles.View14}>
+                <Pressable onPress={() => setModalThreeDot(!ModalThreeDot)} style={{ alignSelf: 'flex-end' }}>
+
                     <View style={styles.View15}>
                         <TouchableOpacity
                             style={[styles.croos, styles.buttonClose]}
@@ -108,32 +135,36 @@ const Hometo = (props) => {
                                 <Text style={styles.Text6}>Move to </Text>
                             </View>
                         </TouchableOpacity>
-                        <View style={styles.View13}>
-                            <Text style={styles.Text6}>Snooze </Text>
-                        </View>
-                        <View style={styles.View13}>
+                        <TouchableOpacity style={styles.View13} onPress={() => {
+                            setModalThreeDot(!ModalThreeDot)
+                            setSnooze(true)
+                        }} >
+                            <Text style={styles.Text6} >Snooze </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.View13}>
                             <Text style={styles.Text6}>Change labels </Text>
-                        </View>
-                        <View style={styles.View13}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.View13}>
                             <Text style={styles.Text6}>Maek as not important </Text>
-                        </View>
-                        <View style={styles.View13}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.View13}>
                             <Text style={styles.Text6}>Mute </Text>
-                        </View>
-                        <View style={styles.View13}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.View13}>
                             <Text style={styles.Text6}>Print </Text>
-                        </View>
-                        <View style={styles.View13}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.View13}>
                             <Text style={styles.Text6}>Report spam </Text>
-                        </View>
-                        <View style={styles.View13}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.View13}>
                             <Text style={styles.Text6}>Add to Tasks </Text>
-                        </View>
+                        </TouchableOpacity>
                         <View style={styles.View13}>
                             <Text style={styles.Text6}>Help and feedback </Text>
                         </View>
                     </View>
-                </View>
+
+                </Pressable>
             </Modal>
 
             <Modal
@@ -141,7 +172,8 @@ const Hometo = (props) => {
                 transparent={true}
                 visible={Delete}
             >
-                <View style={styles.View17}>
+                <Pressable onPress={() => setDelete(!Delete)} style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 35 }}>
+
                     <View style={styles.View16}>
                         <Text style={styles.Text7}>Archive this conversation?</Text>
                         <View style={styles.View18}>
@@ -154,8 +186,75 @@ const Hometo = (props) => {
                             <Text style={{ color: 'blue', fontSize: 16 }}>OK</Text>
                         </View>
                     </View>
-                </View>
+
+                </Pressable>
             </Modal>
+
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={Inbox}
+            >
+                <Pressable onPress={() => setInbox(!Inbox)} style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 35 }}>
+                    <View style={styles.View20}>
+                        <Text style={styles.Text8}>Label as</Text>
+                        <TouchableOpacity style={styles.View21} onPress={() => setToggleCheckBox(!toggleCheckBox)}>
+                            <Image resizeMode={'cover'} source={require('../../assets/images/inbox.png')} />
+                            <View style={styles.View22}>
+                                <Text style={styles.Text9}>Inbox</Text>
+                                <CheckBox
+                                    disabled={false}
+                                    value={toggleCheckBox}
+                                    boxType={'square'}
+                                    onCheckColor={'#fff'}
+                                    onFillColor={'blue'}
+                                    lineWidth={3}
+                                    tintColor={'#000'}
+                                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                                />
+                            </View>
+                        </TouchableOpacity>
+                        <View style={styles.View23}>
+                            <TouchableOpacity
+                                style={[styles.croos, styles.buttonClose]}
+                                onPress={() => setInbox(!Inbox)}
+                            >
+                                <Text style={styles.Text10}>Cancel</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={[styles.croos, styles.buttonClose]}
+                                onPress={() => setInbox(!Inbox)}
+                            >
+                                <Text style={styles.Text10}>OK</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                </Pressable>
+            </Modal>
+
+
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={Snooze}
+
+            >
+                <Pressable onPress={() => setSnooze(!Snooze)} style={{ flex: 1, justifyContent: 'center', paddingHorizontal: 20, }}>
+                    <View style={styles.View27}>
+                        <TouchableOpacity
+                            style={[styles.croos, styles.buttonClose]}
+                            onPress={() => setSnooze(!Snooze)}
+                        >
+                            <Text style={{ color: 'blue', fontSize: 16 }}>Cancel</Text>
+                        </TouchableOpacity>
+                    </View>
+
+
+
+                </Pressable>
+            </Modal>
+
         </View>
     )
 }
@@ -166,10 +265,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal: 16,
-        paddingBottom: 20
+        paddingBottom: 30
     },
     View1: {
-        marginTop: 35,
+        marginTop: 45,
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
@@ -255,6 +354,10 @@ const styles = StyleSheet.create({
         marginLeft: 15,
         marginTop: 10
     },
+    Image8: {
+        width: 20,
+        height: 20,
+    },
 
     View12: {
         width: 220,
@@ -280,9 +383,7 @@ const styles = StyleSheet.create({
         marginTop: 40,
         borderRadius: 5
     },
-    View14: {
-        alignSelf: 'flex-end'
-    },
+
     View16: {
         height: 135,
         width: '100%',
@@ -290,12 +391,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         paddingHorizontal: 18
     },
-    View17: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingHorizontal: 35
-    },
+
     Text7: {
         fontSize: 16,
         marginTop: 20
@@ -315,5 +411,67 @@ const styles = StyleSheet.create({
         height: 15,
         marginLeft: 10,
         marginTop: 3
+    },
+    View20: {
+        width: '100%',
+        height: 200,
+        backgroundColor: '#fff',
+        borderRadius: 35,
+        paddingHorizontal: 20
+    },
+    Text8: {
+        fontSize: 30,
+        marginTop: 20
+    },
+    View21: {
+        marginTop: 25,
+        flexDirection: 'row',
+    },
+    Text9: {
+        fontSize: 18,
+        alignSelf: 'center',
+        marginLeft: 20
+    },
+    View22: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    View23: {
+        marginTop: 50,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginLeft: 100
+    },
+    Text10: {
+        fontSize: 16,
+        color: 'blue',
+        fontWeight: '600'
+    },
+    View24: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: "space-between",
+        alignItems: 'flex-end'
+    },
+    View25: {
+        height: 50,
+        width: 110,
+        borderWidth: 1,
+        borderRadius: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row'
+    },
+    Text11: {
+        fontSize: 18,
+        marginLeft: 10
+    },
+    View27: {
+        height: 280,
+        width: '100%',
+        backgroundColor: "#fff",
+        borderRadius: 10
     }
+
 })

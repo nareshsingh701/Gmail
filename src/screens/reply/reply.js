@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     View1: {
-        marginTop: 30,
+        marginTop: 45,
         flexDirection: 'row',
         paddingHorizontal: 16
     },

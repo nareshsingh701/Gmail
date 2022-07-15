@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, FlatList, Modal, Linking } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, FlatList, Modal, Linking, Pressable } from 'react-native';
 
 
 const Home = (props,) => {
@@ -74,73 +74,76 @@ const Home = (props,) => {
 
 
 
-      <View style={styles.centeredView}>
-        <Modal
-          animationType="none"
-          transparent={true}
-          visible={modalVisible}
-          onRequestClose={() => setModalVisible(!modalVisible)}
-        >
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-              <View style={styles.View8}>
-                <TouchableOpacity
-                  style={[styles.buttonClose]}
-                  onPress={() => setModalVisible(!modalVisible)}
-                >
-                  <Image resizeMode={'cover'} style={styles.Image5} source={require('../../assets/images/croos.png')} />
-                </TouchableOpacity>
-                <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/google_logo.png')} />
-              </View>
-              <View style={styles.View9}>
-                <Image resizeMode={'cover'} style={styles.Image} source={require('../../assets/images/rama.png')} />
-                <View style={styles.View11}>
-                  <Text style={styles.Text1}>Naresh Singh</Text>
-                  <Text>nareshsingh7011111@gmail</Text>
-                </View>
-              </View>
-              <View style={styles.View12}>
-                <Text style={styles.Text1}>Manage your Google Account</Text>
-              </View>
-              <View style={styles.View13}>
-              </View>
-              <TouchableOpacity onPress={() => {
-                setModalVisible(false)
-                props.navigation.navigate('storage')
-              }}>
-                <View style={styles.View14}>
-                  <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/cloud.png')} />
-                  <Text style={styles.Text2}>Storage used: 0% of 15 GB</Text>
-                </View>
+
+      <Modal
+        animationType="none"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(!modalVisible)}
+      >
+        <Pressable onPress={() => setModalVisible(!modalVisible)} style={{ flex: 1, marginTop: 140, paddingHorizontal: 16 }}>
+
+          <View style={styles.modalView}>
+            <View style={styles.View8}>
+              <TouchableOpacity
+                style={[styles.buttonClose]}
+                onPress={() => setModalVisible(!modalVisible)}
+              >
+                <Image resizeMode={'cover'} style={styles.Image5} source={require('../../assets/images/croos.png')} />
               </TouchableOpacity>
-              <View style={styles.View15}>
-              </View>
-              <TouchableOpacity onPress={navigateToScreen}>
-                <View style={styles.View16}>
-                  <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/user.png')} />
-                  <Text style={styles.Text3}>Add another account</Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => {
-                setModalVisible(false)
-                props.navigation.navigate('account')
-              }}>
-                <View style={styles.View17}>
-                  <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/settings.png')} />
-                  <Text style={styles.Text3}>Manage accounts on this device</Text>
-                </View>
-              </TouchableOpacity>
-              <View style={styles.View18}>
-              </View>
-              <View style={styles.View19}>
-                <Text onPress={() => Linking.openURL('https://policies.google.com/privacy?hl=en-GB')}>privacy policy</Text>
-                <Text style={styles.Text4}>.</Text>
-                <Text onPress={() => Linking.openURL('https://policies.google.com/terms?hl=en-GB')}>Terms of service</Text>
+              <Image resizeMode={'cover'} style={styles.Image7} source={require('../../assets/images/google_logo.png')} />
+            </View>
+            <View style={styles.View9}>
+              <Image resizeMode={'cover'} style={styles.Image} source={require('../../assets/images/rama.png')} />
+              <View style={styles.View11}>
+                <Text style={styles.Text1}>Naresh Singh</Text>
+                <Text>nareshsingh7011111@gmail</Text>
               </View>
             </View>
+            <View style={styles.View12}>
+              <Text style={styles.Text1}>Manage your Google Account</Text>
+            </View>
+            <View style={styles.View13}>
+            </View>
+            <TouchableOpacity onPress={() => {
+              setModalVisible(false)
+              props.navigation.navigate('storage')
+            }}>
+              <View style={styles.View14}>
+                <Image resizeMode={'cover'} style={styles.Image8} source={require('../../assets/images/cloud.png')} />
+                <Text style={styles.Text2}>Storage used: 0% of 15 GB</Text>
+              </View>
+            </TouchableOpacity>
+            <View style={styles.View15}>
+            </View>
+            <TouchableOpacity onPress={navigateToScreen}>
+              <View style={styles.View16}>
+                <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/user.png')} />
+                <Text style={styles.Text3}>Add another account</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              setModalVisible(false)
+              props.navigation.navigate('account')
+            }}>
+              <View style={styles.View17}>
+                <Image resizeMode={'cover'} style={styles.Image9} source={require('../../assets/images/settings.png')} />
+                <Text style={styles.Text3}>Manage accounts on this device</Text>
+              </View>
+            </TouchableOpacity>
+            <View style={styles.View18}>
+            </View>
+            <View style={styles.View19}>
+              <Text onPress={() => Linking.openURL('https://policies.google.com/privacy?hl=en-GB')}>privacy policy</Text>
+              <Text style={styles.Text4}>.</Text>
+              <Text onPress={() => Linking.openURL('https://policies.google.com/terms?hl=en-GB')}>Terms of service</Text>
+            </View>
           </View>
-        </Modal>
-      </View>
+
+        </Pressable>
+      </Modal>
+
+
 
     </SafeAreaView >
   );
@@ -223,11 +226,6 @@ const styles = StyleSheet.create({
 
 
 
-  centeredView: {
-    flex: 1,
-    marginTop: 140,
-    paddingHorizontal: 16
-  },
   modalView: {
     backgroundColor: "white",
     height: 385,
