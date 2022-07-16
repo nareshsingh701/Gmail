@@ -8,6 +8,12 @@ const XiaomiCloud = (props) => {
     const [phrases, setphrases] = useState(false);
     const [name, setname] = useState(false);
     const [Cloud, setCloud] = useState(false);
+    const [Name, setName] = useState(false);
+    const [Off, setOff] = useState(false);
+    const [Messages, setMessages] = useState(false);
+    const [Last, setLast] = useState(false);
+    const [Audio, setAudio] = useState(false);
+    const [History, setHistory] = useState(false);
 
     return (
         <View style={styles.container}>
@@ -43,27 +49,42 @@ const XiaomiCloud = (props) => {
                 <View style={styles.View9}>
                 </View>
                 <View style={styles.View10}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => setcheckeds(!checkeds)}>
                         <View style={styles.View11}>
                             <View style={styles.View12}>
                                 <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/restore.png')} />
                                 <Text style={styles.Text5}>Backups</Text>
                             </View>
                             <View style={styles.View13}>
-                                <Text style={styles.Text6}>Off</Text>
+                                {checkeds == false ?
+                                    <View>
+                                        <Text style={{ fontSize: 16 }}>off</Text>
+                                    </View>
+                                    :
+                                    <View>
+                                        <Text style={{ fontSize: 16 }}>on</Text>
+                                    </View>
+                                }
                                 <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/greater.png')} />
                             </View>
                         </View>
-
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => setName(!Name)}>
                         <View style={styles.View11}>
                             <View style={styles.View12}>
                                 <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/iphone.png')} />
                                 <Text style={styles.Text5}>Find device</Text>
                             </View>
                             <View style={styles.View13}>
-                                <Text style={styles.Text6}>On</Text>
+                                {Name == false ?
+                                    <View>
+                                        <Text style={{ fontSize: 16 }}>on</Text>
+                                    </View>
+                                    :
+                                    <View>
+                                        <Text style={{ fontSize: 16 }}>off</Text>
+                                    </View>
+                                }
                                 <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/greater.png')} />
                             </View>
                         </View>
@@ -80,7 +101,6 @@ const XiaomiCloud = (props) => {
                             </View>
                         </View>
                     </TouchableOpacity>
-
                 </View>
                 <View style={styles.View9}>
                 </View>
@@ -90,7 +110,7 @@ const XiaomiCloud = (props) => {
                         <Text style={styles.Text3}>Sync</Text>
                     </View>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setOff(!Off)}>
                     <View style={styles.View16}>
                         <View style={styles.View17}>
                             <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/gallery.png')} />
@@ -100,12 +120,20 @@ const XiaomiCloud = (props) => {
                             </View>
                         </View>
                         <View style={styles.View18}>
-                            <Text style={styles.Text6}>Off</Text>
+                            {Off == false ?
+                                <View>
+                                    <Text style={{ fontSize: 16 }}>on</Text>
+                                </View>
+                                :
+                                <View>
+                                    <Text style={{ fontSize: 16 }}>off</Text>
+                                </View>
+                            }
                             <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/greater.png')} />
                         </View>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setMessages(!Messages)}>
                     <View style={styles.View16}>
                         <View style={styles.View17}>
                             <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/messages.png')} />
@@ -115,12 +143,20 @@ const XiaomiCloud = (props) => {
                             </View>
                         </View>
                         <View style={styles.View18}>
-                            <Text style={styles.Text6}>Off</Text>
+                            {Messages == false ?
+                                <View>
+                                    <Text style={{ fontSize: 16 }}>off</Text>
+                                </View>
+                                :
+                                <View>
+                                    <Text style={{ fontSize: 16 }}>on</Text>
+                                </View>
+                            }
                             <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/greater.png')} />
                         </View>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setLast(!Last)}>
                     <View style={styles.View16}>
                         <View style={styles.View17}>
                             <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/contacts.png')} />
@@ -130,12 +166,20 @@ const XiaomiCloud = (props) => {
                             </View>
                         </View>
                         <View style={styles.View18}>
-                            <Text style={styles.Text6}>Off</Text>
+                            {Last == false ?
+                                <View>
+                                    <Text style={{ fontSize: 16 }}>on</Text>
+                                </View>
+                                :
+                                <View>
+                                    <Text style={{ fontSize: 16 }}>off</Text>
+                                </View>
+                            }
                             <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/greater.png')} />
                         </View>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setAudio(!Audio)}>
                     <View style={styles.View16}>
                         <View style={styles.View17}>
                             <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/audio.png')} />
@@ -145,12 +189,20 @@ const XiaomiCloud = (props) => {
                             </View>
                         </View>
                         <View style={styles.View18}>
-                            <Text style={styles.Text6}>Off</Text>
+                            {Audio == false ?
+                                <View>
+                                    <Text style={{ fontSize: 16 }}>on</Text>
+                                </View>
+                                :
+                                <View>
+                                    <Text style={{ fontSize: 16 }}>off</Text>
+                                </View>
+                            }
                             <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/greater.png')} />
                         </View>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setHistory(!History)}>
                     <View style={styles.View16}>
                         <View style={styles.View17}>
                             <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/phone.png')} />
@@ -160,7 +212,15 @@ const XiaomiCloud = (props) => {
                             </View>
                         </View>
                         <View style={styles.View18}>
-                            <Text style={styles.Text6}>Off</Text>
+                            {History == false ?
+                                <View>
+                                    <Text style={{ fontSize: 16 }}>off</Text>
+                                </View>
+                                :
+                                <View>
+                                    <Text style={{ fontSize: 16 }}>on</Text>
+                                </View>
+                            }
                             <Image resizeMode={'cover'} style={styles.Image4} source={require('../../assets/images/greater.png')} />
                         </View>
                     </View>
