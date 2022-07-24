@@ -1,37 +1,78 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Switch, TouchableOpacity } from 'react-native'
-
+import { StyleSheet, Text, View, SafeAreaView, FlatList, TouchableOpacity } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import CheckBox from '@react-native-community/checkbox';
 
 const OnOff = () => {
-    const [checkeds, setcheckeds] = useState(false);
+    const [data, setdata] = useState([])
+    const google = [
+        {
+            name: "Google",
+            id: "1"
+        },
+        {
+            name: "Ankush",
+            id: "2"
+        },
+        {
+            name: "Naresh",
+            id: "3"
+        },
+        {
+            name: "Name",
+            id: "4"
+        }
+    ]
 
-    return (
-        <View style={styles.container}>
-            {checkeds == false ?
-                <View>
-                    <Text style={styles.Text8}>ON</Text>
-                </View>
-                :
-                <View>
-                    <Text style={styles.Text8}>off</Text>
-                </View>
+    const onValueChange = (itemSelected, index) => {
+        const newData = data.map(newItem => {
+            if (newItem.id == itemSelected.id) {
+                return {
+                    ...newItem,
+                    selected: !item.selected
+                }
             }
-            <TouchableOpacity onPress={() => setcheckeds(!checkeds)}>
-                <Text>wert</Text>
-            </TouchableOpacity>
+            return {
+                ...newItem,
+                selected: item.selected
+            }
+        })
+        setdata(newData)
+    }
 
-        </View>
-    );
-};
-
-
-export default OnOff
-
+    const renderItem = ({ item, index }) => {
+        return (
+            <View style={{ justifyContent: 'space-between', flexDirection: 'row', paddingHorizontal: 20, marginTop: 20 }}>
+                <TouchableOpacity style={styles.View} onPress={() => onValueChange(item.id)}>
+                    <Text>{item.name}</Text>
+                </TouchableOpacity>
+                <CheckBox
+                    value={item.selected}
+                    disabled={false}
+                    onAnimationType="fill"
+                    offAnimationType='fade'
+                    boxType='square'
+                    onValueChange={() => onValueChange(item, index)}
+                />
+            </View>
+        )
+    }
+    return (
+        <SafeAreaView style={styles.container}>
+            <FlatList
+                style={styles.list}
+                data={google}
+                renderItem={renderItem}
+                keyExtractor={(item) => item.id.toString()}
+            />
+        </SafeAreaView>
+    )
+}
+export default OnOff;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-
-    }
+    },
+    View: {
+        flexDirection: 'row',
+    },
 })

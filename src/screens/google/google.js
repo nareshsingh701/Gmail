@@ -10,6 +10,7 @@ const Google = (props) => {
     const [togglename, setTogglename] = useState(false)
 
     return (
+
         <View style={styles.container}>
             <TouchableOpacity onPress={() => props.navigation.navigate('account')}>
                 <View style={styles.View1}>
@@ -106,9 +107,6 @@ const Google = (props) => {
                 <Image resizeMode={'cover'} style={styles.Image3} source={require('../../assets/images/more.png')} />
                 <Text>More</Text>
             </View>
-
-
-
         </View>
     )
 }
